@@ -50,11 +50,20 @@ So, there are at least four options for anyone wanting to work with the code.
 
 Right now, improving on the Python code is probably the easiest way to go.
 
+We would also love to see it as, say, a Blender plugin.
+
 Ideally, someday, we wanted to generalized this code to work with arbitrary
 sets of parameters to be able to breed any kind of 3D model. Maybe someday
 someone will do that. We enjoyed working on the PlantStudio software, and
 we hope you have fun playing around with it too. We picked the GPL v3 or 
 later license, as a sort of constitution for collaboration on the code.
+
+You can find some similar "breeding" ideas in an Android App that Paul wrote 
+called "EvoJazz"  for breeding new musical phrases.
+  https://market.android.com/details?id=com.evojazz
+  
+So, these ideas can be used in lots of ways to create more abundance of interesting
+patterns in the world.
 
 === On motivations
 
@@ -67,7 +76,7 @@ And: "If you love somebody, set them free (Sting)"
 And someday we may see a balance shift between five interwoven economies in a way that
 gives more people more time for making more free stuff (whether through a basic income,
 3D printing, more gift giving, or better democratic planning), as Paul talks about in this video:
-  "Five Interwoven Economies: Subsistence, Gift, Exchange, Planned, and Theft "
+  "Five Interwoven Economies: Subsistence, Gift, Exchange, Planned, and Theft"
   http://www.youtube.com/watch?v=4vK-M_e0JoY
 
 We hope everyone out there is getting the right amount of vitamin D, since humans need sunlight, 
@@ -89,9 +98,10 @@ Somehow, that seemed really hopeful.
 We hope whatever world you live in, it has a lot of interesting and beautiful plants in it
 (both real and virtual). Ideally we hope those plants could grow in world  that is happy, healthy, 
 joyful, abundant, and intrinsically/mutually secure for all. It has been an honor, and a privilege 
-to help create tools to help others create such a world (and, even with a lot of ups and downs
+to help create tools to help others create such worlds (and, even with a lot of ups and downs
 along the way, a lot of "hard fun" as well).
 
 --Paul Fernhout and Cynthia Kurtz
+July 6, 2011
   
   
