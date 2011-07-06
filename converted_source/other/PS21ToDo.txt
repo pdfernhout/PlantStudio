@@ -1,0 +1,27 @@
+Things to fix in PS2.1
+
+
+
+
+
+DONE
+- link up help for orthogonal sections
+- bug with override and picking up secondary flowers instead of primary - change
+    overrides to work with section name as well as parameter ?
+- range for num primary petals 0-30 but for all other floral parts (pistils, stamens, other petals, sepals) 0-10
+    should be 0-30 for all
+- registered trademark in help system
+- r in about box?? (YES)
+- consider making save/load orientation info with file optional (preference) - sometimes you
+    don't want it when you have the window looking a nice way
+- add preference to ignore screen settings in plant file when loading
+- bug with hard disk for one export type - check emails
+
+NOT DOING
+- one/all and top/side buttons on main window need more bitmap sections for disabled state
+(these seem okay the way they are)
+- when load plant from send-to operation, file name gets messed up. any way to fix this?
+(tried, doesn't seem to be any way to fix it)
+- if change param and redrawing, no progress bar; fine for quick redraws but not good for very complex
+    plants that take a long time to redraw. improve this?
+(looked at, could change but might break something else)

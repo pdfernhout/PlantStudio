@@ -1,0 +1,304 @@
+
+Needed to make sure types not defined with type on the same line:
+
+
+pdf@freevolution:~/workspace/PlantStudioInPython/converted_source$ grep "type P" *.pas
+uppanel.pas:type PdParameterPanel = class(TPanel)
+Upp_boo.pas:type PdBooleanParameterPanel = class(PdParameterPanel)
+upp_col.pas:type PdColorParameterPanel = class(PdParameterPanel)
+upp_hed.pas:type PdHeaderParameterPanel = class(PdParameterPanel)
+upp_int.pas:type PdSmallintParameterPanel = class(PdParameterPanel)
+upp_lis.pas:type PdListParameterPanel = class(PdParameterPanel)
+upp_rea.pas:type PdRealParameterPanel = class(PdParameterPanel)
+upp_scv.pas:type PdSCurveParameterPanel = class(PdParameterPanel)
+upp_tdo.pas:type PdTdoParameterPanel = class(PdParameterPanel)
+pdf@freevolution:~/workspace/PlantStudioInPython/converted_source$ grep "type K" *.pas
+usliders.pas:type KfSlider = class(TGraphicControl)
+pdf@freevolution:~/workspace/PlantStudioInPython/converted_source$ grep "type K" *.pas
+pdf@freevolution:~/workspace/PlantStudioInPython/converted_source$ grep "type P" *.pas
+pdf@freevolution:~/workspace/PlantStudioInPython/converted_source$ 
+
+Modified all these files.
+
+Also, modified all places where function definition spanned more than two lines to only span max two lines
+(put in limit to make sure code holdovers did not runaway if bug in conversion program).
+
+
+=======================
+grep "; var " *.pas | less
+grep "(var " *.pas | less
+
+grep "with " *.pas | less
+
+# locates them all?
+grep "[(;][[:space:]]*var " *.pas | less
+
+=====================
+
+
+
+
+reformatter
+reading all types
+ ================= reading types URegisterSupport.pas
+
+
+ ================= reading types utimeser.pas
+
+
+ ================= reading types umakeht.pas
+
+
+ ================= reading types uplantmn.pas
+
+
+ ================= reading types ubmpsupport.pas
+
+
+ ================= reading types uplant.pas
+
+
+ ================= reading types Uparams.pas
+
+
+ ================= reading types uexcept.pas
+
+
+ ================= reading types ubrdopt.pas
+
+
+ ================= reading types uunits.pas
+
+
+ ================= reading types umerist.pas
+
+
+ ================= reading types usection.pas
+
+
+ ================= reading types U3dexport.pas
+++++++++++++ mismatch on whether parens needed to be added for field: startMesh
+++++++++++++ mismatch on whether parens needed to be added for field: finishChunk
+
+
+ ================= reading types uabout.pas
+
+
+ ================= reading types ubitmap.pas
+
+
+ ================= reading types usupport.pas
+
+
+ ================= reading types uanimate.pas
+
+
+ ================= reading types unozzle.pas
+
+
+ ================= reading types upp_tdo.pas
+
+
+ ================= reading types utravers.pas
+
+
+ ================= reading types ufruit.pas
+
+
+ ================= reading types upp_hed.pas
+
+
+ ================= reading types umodel.pas
+
+
+ ================= reading types upp_rea.pas
+
+
+ ================= reading types udomain.pas
+
+
+ ================= reading types unoted.pas
+
+
+ ================= reading types uamendmt.pas
+
+
+ ================= reading types upp_lis.pas
+
+
+ ================= reading types updform.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+
+
+ ================= reading types upp_scv.pas
+
+
+ ================= reading types uoptions.pas
+
+
+ ================= reading types ustats.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+
+
+ ================= reading types usliders.pas
+
+
+ ================= reading types Upp_boo.pas
+
+
+ ================= reading types uturtle.pas
+
+
+ ================= reading types urandom.pas
+
+
+ ================= reading types umainsupport.pas
+
+
+ ================= reading types uhints.pas
+
+
+ ================= reading types udebug.pas
+
+
+ ================= reading types Utdoedit.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+++++++++++++ mismatch on whether parens needed to be added for field: resetRotations
+++++++++++++ mismatch on whether parens needed to be added for field: create
+++++++++++++ mismatch on whether parens needed to be added for field: doCommand
+
+
+ ================= reading types uborders.pas
+
+
+ ================= reading types uwait.pas
+
+
+ ================= reading types umakepm.pas
+
+
+ ================= reading types utdomove.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+++++++++++++ mismatch on whether parens needed to be added for field: doCommand
+
+
+ ================= reading types ucommand.pas
+++++++++++++ mismatch on whether parens needed to be added for field: doCommand
+++++++++++++ mismatch on whether parens needed to be added for field: undoLast
+++++++++++++ mismatch on whether parens needed to be added for field: redoLast
+
+
+ ================= reading types uppanel.pas
+
+
+ ================= reading types ubrstrat.pas
+
+
+ ================= reading types udxfclr.pas
+
+
+ ================= reading types Umain.pas
+++++++++++++ mismatch on whether parens needed to be added for field: resetRotations
+++++++++++++ mismatch on whether parens needed to be added for field: doCommand
+
+
+ ================= reading types umath.pas
+
+
+ ================= reading types usplash.pas
+
+
+ ================= reading types ubmpopt.pas
+
+
+ ================= reading types updcom.pas
+++++++++++++ mismatch on whether parens needed to be added for field: regrow
+
+
+ ================= reading types Uundo.pas
+
+
+ ================= reading types utransfr.pas
+
+
+ ================= reading types upp_int.pas
+
+
+ ================= reading types uintern.pas
+
+
+ ================= reading types uwizard.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+
+
+ ================= reading types uoptions3dexport.pas
+
+
+ ================= reading types uleaf.pas
+
+
+ ================= reading types upp_col.pas
+
+
+ ================= reading types Udrawingsurface.pas
+++++++++++++ mismatch on whether parens needed to be added for field: initialize
+
+
+ ================= reading types uregister.pas
+
+
+ ================= reading types ucollect.pas
+
+
+ ================= reading types Utdo.pas
+++++++++++++ mismatch on whether parens needed to be added for field: draw
+++++++++++++ mismatch on whether parens needed to be added for field: reverseZValues
+
+
+ ================= reading types umover.pas
+++++++++++++ mismatch on whether parens needed to be added for field: create
+++++++++++++ mismatch on whether parens needed to be added for field: doCommand
+
+
+ ================= reading types uinflor.pas
+++++++++++++ mismatch on whether parens needed to be added for field: drawInternode
+
+
+ ================= reading types ucustdrw.pas
+
+
+ ================= reading types uclasses.pas
+
+
+ ================= reading types upicktdo.pas
+
+
+ ================= reading types U3dsupport.pas
+
+
+ ================= reading types ubreedr.pas
+++++++++++++ mismatch on whether parens needed to be added for field: redrawPlants
+
+
+ ================= reading types Upart.pas
+++++++++++++ mismatch on whether parens needed to be added for field: initialize
+
+
+ ================= reading types ucursor.pas
+
+
+ ================= reading types usstream.pas
+
+
+ ================= reading types uwelcome.pas
+
+
+ ================= reading types ugener.pas
+
+
+ ================= reading types ufiler.pas
+
+
+ ================= reading types uprginfo.pas
+
+

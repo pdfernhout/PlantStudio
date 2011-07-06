@@ -1,0 +1,15 @@
+[Three-dimensional object]
+Name=Carrot root
+Point=133 234 171
+Point=119 182 156
+Point=133 182 150
+Point=118 159 155
+Point=134 159 150
+Point=150 160 155
+Point=150 181 152
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=3 4 5
+Triangle=3 5 7
+Triangle=7 5 6
+Triangle=3 7 1

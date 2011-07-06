@@ -1,0 +1,30 @@
+[Three-dimensional object]
+Name=Common seedling leaf 3
+Point=141 241 150
+Point=100 194 146
+Point=141 191 146
+Point=92 150 137
+Point=141 148 141
+Point=93 126 132
+Point=142 124 138
+Point=101 105 122
+Point=144 96 126
+Point=183 108 122
+Point=188 128 129
+Point=188 150 135
+Point=183 192 144
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=4 5 3
+Triangle=4 6 5
+Triangle=5 6 7
+Triangle=7 6 8
+Triangle=7 8 9
+Triangle=9 10 7
+Triangle=7 10 11
+Triangle=7 11 5
+Triangle=5 11 12
+Triangle=5 12 3
+Triangle=3 12 13
+Triangle=3 13 1
+

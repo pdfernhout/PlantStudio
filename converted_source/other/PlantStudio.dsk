@@ -1,0 +1,270 @@
+[MainWindow]
+Create=1
+Visible=1
+State=2
+Left=2
+Top=-4
+Width=1024
+Height=47
+MaxLeft=-1
+MaxTop=-1
+MaxWidth=1032
+MaxHeight=47
+ClientWidth=1024
+ClientHeight=1
+
+[ProjectManager]
+Create=1
+Visible=1
+State=0
+Left=-2
+Top=45
+Width=95
+Height=689
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=87
+ClientHeight=665
+LargeButtons=1
+Column0Width=75
+Column1Width=125
+Column2Width=50
+
+[PropertyInspector]
+SplitPos=84
+
+[HistoryLists\hiSearchSymbol]
+Count=1
+H0=abc
+
+[HistoryLists\hiEvalExpression]
+Count=13
+H0=208 * 4 / 1475
+H1=domain.sectionManager.orthogonalSections.items[0]
+H2=domain.sectionManager.orthogonalSections.count
+H3=domain.sectionManager.orthogonalSections
+H4=Item1
+H5=iniLines.strings[314]
+H6=iniLines
+H7=options.recentFiles
+H8=options.openMostRecentFileAtStart
+H9=2.0 / 24.0
+H10=0
+H11=plant.pFlower[kGenderMale].tdoParams[kFirstPetals].pullBackAngle
+H12=iniOutputFile
+
+[HistoryLists\hiEvalNewValue]
+Count=0
+
+[HistoryLists\hiOpenFile]
+Count=7
+H0=c:\plantstudio development\code\psv210changes.txt
+H1=c:\plantstudio development\versions\200\package200prepare\iss.txt
+H2=c:\plantstudio development\code\ugrower.pas
+H3=d:\plantstudio long-term\users\submitted\frank salinas - problem downloading\iris-pla.txt
+H4=d:\1 plantstudio backups\bu 16 released as beta 3\udomain.pas
+H5=d:\1 plantstudio backups\bu 17 various small changes\udomain.pas
+H6=c:\plantstudio development\code\psv20changes.txt
+
+[HistoryLists\hiFindError]
+Count=3
+H0=77E15748
+H1=000CF8F0
+H2=00402134
+
+[HistoryLists\hiUnitAlias]
+Count=1
+H0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hiLibUnitAliases]
+Count=1
+H0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hiSearchMasks]
+Count=2
+H0=C:\Delphi3
+H1=D:\1 PlantStudio backups\backups 01-10\bu 02 going back to getting obj working
+
+[Closed Files]
+File_0=SourceModule,'c:\delphi3\source\vcl\Classes.pas',0,1,1451,1,1471,0,0
+File_1=SourceModule,'C:\PlantStudio Development\Code\USECTION.PAS',0,1,136,42,143,0,0
+File_2=SourceModule,'C:\PlantStudio Development\Code\UPARAMS.PAS',0,1,96,44,102,0,0
+File_3=SourceModule,'C:\PlantStudio Development\Code\uoptions3dexport.pas',0,1,330,10,346,0,0
+File_4=SourceModule,'C:\PlantStudio Development\Code\U3dexport.pas',0,1,642,78,656,0,0
+File_5=SourceModule,'C:\PlantStudio Development\Code\uanimate.pas',0,1,151,20,21,0,0
+File_6=SourceModule,'c:\delphi3\source\vcl\Dialogs.pas',0,1,702,1,729,0,0
+File_7=SourceModule,'C:\PlantStudio Development\Code\uabout.pas',0,1,1,20,22,1,0
+
+[Modules]
+Module0=C:\PlantStudio Development\Code\UBREEDR.PAS
+Module1=C:\PlantStudio Development\Code\Umain.pas
+Module2=C:\PlantStudio Development\Code\PSv210changes.txt
+Module3=C:\PlantStudio Development\Code\PS21ToDo.txt
+Module4=C:\PlantStudio Development\Code\UPLANT.PAS
+Module5=C:\PlantStudio Development\Code\UPDCOM.PAS
+Module6=C:\PlantStudio Development\Code\UTRAVERS.PAS
+Module7=C:\PlantStudio Development\Code\PlantStudio.dpr
+Module8=C:\PlantStudio Development\Code\utimeser.pas
+Module9=C:\PlantStudio Development\Code\UOPTIONS.PAS
+Module10=C:\PlantStudio Development\Code\UDOMAIN.PAS
+Count=11
+EditWindowCount=1
+
+[C:\PlantStudio Development\Code\UBREEDR.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\Umain.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\PSv210changes.txt]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\PS21ToDo.txt]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\UPLANT.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\UPDCOM.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\UTRAVERS.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\PlantStudio.dpr]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\utimeser.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\UOPTIONS.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\PlantStudio Development\Code\UDOMAIN.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[EditWindow0]
+Create=1
+Visible=1
+State=0
+Left=95
+Top=45
+Width=914
+Height=685
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=906
+ClientHeight=658
+SplitPos=121
+MessagePane=1
+ViewCount=10
+CurrentView=3
+View0=0
+View1=1
+View2=2
+View3=3
+View4=4
+View5=5
+View6=6
+View7=7
+View8=8
+View9=9
+
+[View0]
+Module=C:\PlantStudio Development\Code\PS21ToDo.txt
+CursorX=4
+CursorY=4
+TopLine=1
+LeftCol=1
+
+[View1]
+Module=C:\PlantStudio Development\Code\PSv210changes.txt
+CursorX=25
+CursorY=7
+TopLine=1
+LeftCol=1
+
+[View2]
+Module=C:\PlantStudio Development\Code\Umain.pas
+CursorX=1
+CursorY=2943
+TopLine=2928
+LeftCol=1
+
+[View3]
+Module=C:\PlantStudio Development\Code\UBREEDR.PAS
+CursorX=59
+CursorY=557
+TopLine=537
+LeftCol=1
+
+[View4]
+Module=C:\PlantStudio Development\Code\UPLANT.PAS
+CursorX=35
+CursorY=865
+TopLine=857
+LeftCol=1
+
+[View5]
+Module=C:\PlantStudio Development\Code\UTRAVERS.PAS
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[View6]
+Module=C:\PlantStudio Development\Code\UPDCOM.PAS
+CursorX=21
+CursorY=3528
+TopLine=3509
+LeftCol=1
+
+[View7]
+Module=C:\PlantStudio Development\Code\UOPTIONS.PAS
+CursorX=21
+CursorY=313
+TopLine=292
+LeftCol=1
+
+[View8]
+Module=C:\PlantStudio Development\Code\utimeser.pas
+CursorX=18
+CursorY=461
+TopLine=460
+LeftCol=1
+
+[View9]
+Module=C:\PlantStudio Development\Code\UDOMAIN.PAS
+CursorX=14
+CursorY=86
+TopLine=72
+LeftCol=1
+
+[Watches]
+Count=0
+
+[Breakpoints]
+Count=0
+

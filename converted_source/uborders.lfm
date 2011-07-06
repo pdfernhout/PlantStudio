@@ -1,0 +1,141 @@
+object PrintBordersForm: TPrintBordersForm
+  Left = 616
+  Top = 226
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Print Border'
+  ClientHeight = 103
+  ClientWidth = 274
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object printBorderColorInnerLabel: TLabel
+    Left = 25
+    Top = 27
+    Width = 24
+    Height = 14
+    Caption = 'color'
+  end
+  object printBorderColorOuterLabel: TLabel
+    Left = 25
+    Top = 78
+    Width = 24
+    Height = 14
+    Caption = 'color'
+  end
+  object printBorderWidthInnerLabel: TLabel
+    Left = 77
+    Top = 27
+    Width = 85
+    Height = 14
+    Caption = 'thickness (pixels)'
+  end
+  object printBorderWidthOuterLabel: TLabel
+    Left = 77
+    Top = 78
+    Width = 85
+    Height = 14
+    Caption = 'thickness (pixels)'
+  end
+  object helpButton: TSpeedButton
+    Left = 211
+    Top = 63
+    Width = 60
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object Close: TButton
+    Left = 211
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = 'OK'
+    TabOrder = 6
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 211
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = 'Cancel'
+    TabOrder = 7
+    OnClick = cancelClick
+  end
+  object printBorderInner: TCheckBox
+    Left = 3
+    Top = 5
+    Width = 118
+    Height = 17
+    Caption = 'Draw inner border'
+    TabOrder = 0
+    OnClick = printBorderInnerClick
+  end
+  object printBorderOuter: TCheckBox
+    Left = 3
+    Top = 58
+    Width = 112
+    Height = 17
+    Caption = 'Draw outer border'
+    TabOrder = 3
+    OnClick = printBorderOuterClick
+  end
+  object printBorderColorInner: TPanel
+    Left = 53
+    Top = 26
+    Width = 15
+    Height = 15
+    BevelOuter = bvLowered
+    TabOrder = 1
+    OnMouseUp = printBorderColorInnerMouseUp
+  end
+  object printBorderColorOuter: TPanel
+    Left = 53
+    Top = 77
+    Width = 15
+    Height = 15
+    BevelOuter = bvLowered
+    TabOrder = 4
+    OnMouseUp = printBorderColorOuterMouseUp
+  end
+  object printBorderWidthInner: TSpinEdit
+    Left = 163
+    Top = 22
+    Width = 39
+    Height = 22
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 2
+    Value = 0
+  end
+  object printBorderWidthOuter: TSpinEdit
+    Left = 163
+    Top = 73
+    Width = 39
+    Height = 22
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 5
+    Value = 0
+  end
+end

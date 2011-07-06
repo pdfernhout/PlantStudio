@@ -1,0 +1,22 @@
+[Three-dimensional object]
+Name=Radish leaf
+Point=130 235 150
+Point=91 126 136
+Point=130 126 150
+Point=96 81 131
+Point=130 82 150
+Point=113 83 143
+Point=130 46 108
+Point=108 126 141
+Point=151 82 141
+Point=163 81 130
+Point=159 125 143
+Point=174 125 132
+Triangle=3 2 1
+Triangle=5 4 3
+Triangle=5 7 6
+Triangle=3 4 8
+Triangle=5 9 7
+Triangle=3 10 5
+Triangle=11 10 3
+Triangle=1 12 3

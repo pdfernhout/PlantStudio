@@ -1,0 +1,57 @@
+object ChooseDXFColorForm: TChooseDXFColorForm
+  Left = 409
+  Top = 127
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsDialog
+  Caption = 'Choose DXF color'
+  ClientHeight = 62
+  ClientWidth = 273
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 14
+  object colorsDrawGrid: TDrawGrid
+    Left = 2
+    Top = 4
+    Width = 206
+    Height = 57
+    ColCount = 12
+    DefaultColWidth = 16
+    DefaultRowHeight = 54
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+    ScrollBars = ssNone
+    TabOrder = 0
+    OnDblClick = colorsDrawGridDblClick
+    OnDrawCell = colorsDrawGridDrawCell
+    OnSelectCell = colorsDrawGridSelectCell
+  end
+  object Close: TButton
+    Left = 212
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = 'OK'
+    Default = True
+    TabOrder = 1
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 212
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = 'Cancel'
+    TabOrder = 2
+    OnClick = cancelClick
+  end
+end

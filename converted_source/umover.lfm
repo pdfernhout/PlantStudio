@@ -1,0 +1,267 @@
+object MoverForm: TMoverForm
+  Left = 439
+  Top = 193
+  AutoScroll = False
+  Caption = 'Plant Mover'
+  ClientHeight = 373
+  ClientWidth = 400
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object previewImage: TImage
+    Left = 150
+    Top = 4
+    Width = 100
+    Height = 71
+  end
+  object leftPlantFileChangedIndicator: TImage
+    Left = 4
+    Top = 30
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888877788888888888878878888888888878
+      8878888888888788878888888888788878888888888788878888888888788878
+      8888888887888788888888887888788888888887888788888888887878788888
+      8888877787888888888878877888888888887887888888888888877888888888
+      8888
+    }
+    Transparent = True
+  end
+  object rightPlantFileChangedIndicator: TImage
+    Left = 262
+    Top = 30
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888877788888888888878878888888888878
+      8878888888888788878888888888788878888888888788878888888888788878
+      8888888887888788888888887888788888888887888788888888887878788888
+      8888877787888888888878877888888888887887888888888888877888888888
+      8888
+    }
+    Transparent = True
+  end
+  object helpButton: TSpeedButton
+    Left = 152
+    Top = 321
+    Width = 100
+    Height = 24
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object leftPlantFileNameEdit: TEdit
+    Left = 2
+    Top = 4
+    Width = 140
+    Height = 20
+    AutoSelect = False
+    Color = clBtnFace
+    Ctl3D = False
+    ParentCtl3D = False
+    ReadOnly = True
+    TabOrder = 0
+    Text = 'c:\PlantStudio\plants1.pla'
+  end
+  object leftOpenClose: TButton
+    Left = 24
+    Top = 28
+    Width = 50
+    Height = 21
+    Caption = '&Open...'
+    TabOrder = 1
+    OnClick = leftOpenCloseClick
+  end
+  object rightPlantFileNameEdit: TEdit
+    Left = 258
+    Top = 4
+    Width = 140
+    Height = 20
+    AutoSelect = False
+    Color = clBtnFace
+    Ctl3D = False
+    ParentCtl3D = False
+    ReadOnly = True
+    TabOrder = 2
+    Text = 'c:\PlantStudio\newplants.pla'
+  end
+  object rightOpenClose: TButton
+    Left = 284
+    Top = 27
+    Width = 50
+    Height = 21
+    Caption = '&Open...'
+    TabOrder = 3
+    OnClick = rightOpenCloseClick
+  end
+  object newFile: TButton
+    Left = 337
+    Top = 27
+    Width = 50
+    Height = 21
+    Caption = '&New...'
+    TabOrder = 4
+    OnClick = newFileClick
+  end
+  object transfer: TButton
+    Left = 151
+    Top = 108
+    Width = 100
+    Height = 21
+    Caption = '&Transfer >>'
+    TabOrder = 5
+    OnClick = transferClick
+  end
+  object close: TButton
+    Left = 151
+    Top = 349
+    Width = 100
+    Height = 21
+    Caption = '&Quit'
+    TabOrder = 16
+    OnClick = closeClick
+  end
+  object undo: TButton
+    Left = 151
+    Top = 273
+    Width = 100
+    Height = 21
+    Caption = '&Undo duplicate'
+    TabOrder = 14
+    OnClick = undoClick
+  end
+  object redo: TButton
+    Left = 151
+    Top = 297
+    Width = 100
+    Height = 21
+    Caption = '&Redo last'
+    TabOrder = 15
+    OnClick = redoClick
+  end
+  object cut: TButton
+    Left = 151
+    Top = 132
+    Width = 100
+    Height = 21
+    Caption = '&Cut (Ctrl-X)'
+    TabOrder = 8
+    OnClick = cutClick
+  end
+  object copy: TButton
+    Left = 151
+    Top = 155
+    Width = 100
+    Height = 21
+    Caption = 'C&opy (Ctrl-C)'
+    TabOrder = 9
+    OnClick = copyClick
+  end
+  object paste: TButton
+    Left = 151
+    Top = 179
+    Width = 100
+    Height = 21
+    Caption = '&Paste (Ctrl-V)'
+    TabOrder = 10
+    OnClick = pasteClick
+  end
+  object rename: TButton
+    Left = 151
+    Top = 250
+    Width = 100
+    Height = 21
+    Caption = 'Ren&ame...'
+    TabOrder = 13
+    OnClick = renameClick
+  end
+  object duplicate: TButton
+    Left = 151
+    Top = 202
+    Width = 100
+    Height = 21
+    Caption = '&Duplicate'
+    TabOrder = 11
+    OnClick = duplicateClick
+  end
+  object delete: TButton
+    Left = 151
+    Top = 226
+    Width = 100
+    Height = 21
+    Caption = 'D&elete'
+    TabOrder = 12
+    OnClick = deleteClick
+  end
+  object leftPlantList: TDrawGrid
+    Left = 4
+    Top = 52
+    Width = 140
+    Height = 315
+    ColCount = 1
+    DefaultRowHeight = 16
+    DefaultDrawing = False
+    FixedCols = 0
+    FixedRows = 0
+    GridLineWidth = 0
+    Options = []
+    ScrollBars = ssVertical
+    TabOrder = 6
+    OnDblClick = leftPlantListDblClick
+    OnDragOver = leftPlantListDragOver
+    OnDrawCell = leftPlantListDrawCell
+    OnEndDrag = leftPlantListEndDrag
+    OnKeyDown = leftPlantListKeyDown
+    OnMouseDown = leftPlantListMouseDown
+  end
+  object rightPlantList: TDrawGrid
+    Left = 258
+    Top = 52
+    Width = 140
+    Height = 317
+    ColCount = 1
+    DefaultRowHeight = 16
+    DefaultDrawing = False
+    FixedCols = 0
+    FixedRows = 0
+    GridLineWidth = 0
+    TabOrder = 7
+    OnDblClick = rightPlantListDblClick
+    OnDragOver = rightPlantListDragOver
+    OnDrawCell = rightPlantListDrawCell
+    OnEndDrag = rightPlantListEndDrag
+    OnKeyDown = rightPlantListKeyDown
+    OnMouseDown = rightPlantListMouseDown
+  end
+end

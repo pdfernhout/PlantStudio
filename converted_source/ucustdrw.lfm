@@ -1,0 +1,159 @@
+object CustomDrawOptionsForm: TCustomDrawOptionsForm
+  Left = 618
+  Top = 244
+  BorderStyle = bsDialog
+  Caption = 'Custom Draw Options'
+  ClientHeight = 217
+  ClientWidth = 290
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 227
+    Top = 63
+    Width = 61
+    Height = 25
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object Close: TButton
+    Left = 228
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = '&OK'
+    TabOrder = 3
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 228
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    TabOrder = 4
+    OnClick = cancelClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 4
+    Top = 158
+    Width = 219
+    Height = 55
+    Caption = 'Sorting'
+    TabOrder = 0
+    object sortPolygons: TCheckBox
+      Left = 10
+      Top = 14
+      Width = 97
+      Height = 17
+      Caption = 'So&rt polygons'
+      TabOrder = 0
+      OnClick = sortPolygonsClick
+    end
+    object sortTdosAsOneItem: TCheckBox
+      Left = 10
+      Top = 32
+      Width = 157
+      Height = 17
+      Caption = 'Sort 3D objects as o&ne item'
+      TabOrder = 1
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 4
+    Top = 76
+    Width = 219
+    Height = 81
+    Caption = 'Filling'
+    TabOrder = 1
+    object lineContrastIndexLabel: TLabel
+      Left = 55
+      Top = 54
+      Width = 125
+      Height = 14
+      Caption = 'Line &contrast index (0-10)'
+      FocusControl = lineContrastIndex
+    end
+    object fillPolygons: TCheckBox
+      Left = 10
+      Top = 16
+      Width = 97
+      Height = 17
+      Caption = 'Fill &polygons'
+      TabOrder = 0
+      OnClick = fillPolygonsClick
+    end
+    object drawLinesBetweenPolygons: TCheckBox
+      Left = 10
+      Top = 32
+      Width = 167
+      Height = 17
+      Caption = 'Draw &lines between polygons'
+      TabOrder = 1
+      OnClick = drawLinesBetweenPolygonsClick
+    end
+    object lineContrastIndex: TSpinEdit
+      Left = 10
+      Top = 51
+      Width = 40
+      Height = 22
+      MaxValue = 10
+      MinValue = 0
+      TabOrder = 2
+      Value = 10
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 4
+    Top = 4
+    Width = 219
+    Height = 72
+    Caption = 'Drawing'
+    TabOrder = 2
+    object draw3DObjects: TCheckBox
+      Left = 8
+      Top = 32
+      Width = 117
+      Height = 17
+      Caption = 'Draw &3D objects'
+      TabOrder = 1
+      OnClick = draw3DObjectsClick
+    end
+    object drawStems: TCheckBox
+      Left = 8
+      Top = 15
+      Width = 97
+      Height = 17
+      Caption = 'Draw &stems'
+      TabOrder = 0
+    end
+    object draw3DObjectsAsBoundingRectsOnly: TCheckBox
+      Left = 8
+      Top = 49
+      Width = 203
+      Height = 17
+      Caption = 'Draw 3D object &bounding boxes only'
+      TabOrder = 2
+    end
+  end
+end

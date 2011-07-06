@@ -1,0 +1,615 @@
+object OptionsForm: TOptionsForm
+  Left = 279
+  Top = 188
+  ActiveControl = cancel
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'PlantStudio Preferences'
+  ClientHeight = 247
+  ClientWidth = 450
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 386
+    Top = 63
+    Width = 61
+    Height = 25
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object Close: TButton
+    Left = 386
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = '&OK'
+    DragCursor = crHandPoint
+    TabOrder = 1
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 386
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    TabOrder = 2
+    OnClick = cancelClick
+  end
+  object optionsNotebook: TTabbedNotebook
+    Left = 0
+    Top = 0
+    Width = 379
+    Height = 247
+    Align = alLeft
+    PageIndex = 2
+    TabsPerRow = 5
+    TabFont.Charset = DEFAULT_CHARSET
+    TabFont.Color = clBtnText
+    TabFont.Height = -11
+    TabFont.Name = 'Arial'
+    TabFont.Style = []
+    TabOrder = 0
+    object page1: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Drawing'
+      object wholeProgramBox: TGroupBox
+        Left = 4
+        Top = 94
+        Width = 362
+        Height = 95
+        Caption = ' Whole program '
+        TabOrder = 1
+        object backgroundColorLabel: TLabel
+          Left = 34
+          Top = 20
+          Width = 152
+          Height = 14
+          Caption = '&Background color behind plants'
+          FocusControl = backgroundColor
+        end
+        object transparentColorLabel: TLabel
+          Left = 34
+          Top = 46
+          Width = 292
+          Height = 14
+          Caption = '&Transparent color for overlaying plants if using plant bitmaps'
+          FocusControl = transparentColor
+        end
+        object backgroundColor: TPanel
+          Left = 9
+          Top = 17
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clWhite
+          TabOrder = 0
+          OnMouseUp = backgroundColorMouseUp
+        end
+        object showPlantDrawingProgress: TCheckBox
+          Left = 9
+          Top = 69
+          Width = 161
+          Height = 17
+          Caption = '&Show drawing progress'
+          TabOrder = 2
+        end
+        object transparentColor: TPanel
+          Left = 9
+          Top = 43
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clWhite
+          TabOrder = 1
+          OnMouseUp = transparentColorMouseUp
+        end
+      end
+      object mainWindowDrawingOptionsBox: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 362
+        Height = 85
+        Caption = ' Main window '
+        TabOrder = 0
+        object memoryLimitLabel: TLabel
+          Left = 60
+          Top = 29
+          Width = 282
+          Height = 14
+          Caption = '&Upper limit on memory devoted to plant bitmaps (1-200 MB)'
+          FocusControl = memoryLimitForPlantBitmaps_MB
+        end
+        object customDrawOptions: TButton
+          Left = 8
+          Top = 54
+          Width = 202
+          Height = 21
+          Caption = 'Change Custom Dra&wing Options...'
+          TabOrder = 1
+          OnClick = customDrawOptionsClick
+        end
+        object memoryLimitForPlantBitmaps_MB: TSpinEdit
+          Left = 8
+          Top = 24
+          Width = 47
+          Height = 23
+          MaxValue = 200
+          MinValue = 1
+          TabOrder = 0
+          Value = 200
+        end
+      end
+    end
+    object page2: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Selecting'
+      object GroupBox1: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 362
+        Height = 69
+        Caption = ' Main window '
+        TabOrder = 0
+        object firstSelectionRectangleColorLabel: TLabel
+          Left = 32
+          Top = 21
+          Width = 161
+          Height = 14
+          Caption = 'Rectangle color for &focused plant'
+          FocusControl = firstSelectionRectangleColor
+        end
+        object multiSelectionRectangleColorLabel: TLabel
+          Left = 32
+          Top = 43
+          Width = 196
+          Height = 14
+          Caption = 'Rectangle color for &other selected plants'
+          FocusControl = multiSelectionRectangleColor
+        end
+        object firstSelectionRectangleColor: TPanel
+          Left = 8
+          Top = 18
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clRed
+          TabOrder = 0
+          OnMouseUp = firstSelectionRectangleColorMouseUp
+        end
+        object multiSelectionRectangleColor: TPanel
+          Left = 8
+          Top = 40
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clBlue
+          TabOrder = 1
+          OnMouseUp = multiSelectionRectangleColorMouseUp
+        end
+      end
+    end
+    object page3: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Editing'
+      object GroupBox2: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 362
+        Height = 176
+        Caption = ' Main window '
+        TabOrder = 0
+        object rotationIncrementLabel: TLabel
+          Left = 67
+          Top = 24
+          Width = 289
+          Height = 14
+          Caption = '&Rotation change with arrow or mouse click (1-100 degrees)'
+          FocusControl = rotationIncrement
+        end
+        object nudgeDistanceLabel: TLabel
+          Left = 67
+          Top = 54
+          Width = 288
+          Height = 14
+          Caption = 'Distance plant &moves with Control-arrow key (0-100 pixels)'
+          FocusControl = nudgeDistance
+        end
+        object resizeDistanceLabel: TLabel
+          Left = 67
+          Top = 84
+          Width = 284
+          Height = 14
+          Caption = 'Size &increase with Control-Shift-up-arrow key (100-200%)'
+          FocusControl = resizeKeyUpMultiplierPercent
+        end
+        object pasteRectSizeLabel: TLabel
+          Left = 67
+          Top = 114
+          Width = 280
+          Height = 14
+          Caption = ' Width and height of plant &pasted from text (50-500 pixels)'
+        end
+        object resizeRectSizeLabel: TLabel
+          Left = 67
+          Top = 146
+          Width = 238
+          Height = 14
+          Caption = ' Width and height of resizing &square (2-20 pixels)'
+        end
+        object rotationIncrement: TSpinEdit
+          Left = 8
+          Top = 19
+          Width = 53
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 0
+          Value = 1
+        end
+        object nudgeDistance: TSpinEdit
+          Left = 8
+          Top = 49
+          Width = 53
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 1
+          Value = 1
+        end
+        object resizeKeyUpMultiplierPercent: TSpinEdit
+          Left = 8
+          Top = 80
+          Width = 53
+          Height = 23
+          Increment = 10
+          MaxValue = 200
+          MinValue = 100
+          TabOrder = 2
+          Value = 100
+        end
+        object pasteRectSize: TSpinEdit
+          Left = 8
+          Top = 110
+          Width = 53
+          Height = 23
+          Increment = 10
+          MaxValue = 500
+          MinValue = 50
+          TabOrder = 3
+          Value = 100
+        end
+        object resizeRectSize: TSpinEdit
+          Left = 8
+          Top = 140
+          Width = 53
+          Height = 23
+          MaxValue = 20
+          MinValue = 2
+          TabOrder = 4
+          Value = 2
+        end
+      end
+    end
+    object page4: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Posing'
+      object GroupBox4: TGroupBox
+        Left = 4
+        Top = 5
+        Width = 362
+        Height = 97
+        Caption = ' Main window '
+        TabOrder = 0
+        object Label9: TLabel
+          Left = 32
+          Top = 23
+          Width = 70
+          Height = 14
+          Caption = '&Ghosting color'
+          FocusControl = ghostingColor
+        end
+        object Label10: TLabel
+          Left = 32
+          Top = 45
+          Width = 198
+          Height = 14
+          Caption = '&Highlighting color for all posed plant parts'
+          FocusControl = nonHiddenPosedColor
+        end
+        object Label3: TLabel
+          Left = 32
+          Top = 69
+          Width = 223
+          Height = 14
+          Caption = 'Highlighting color for &selected posed plant part'
+          FocusControl = selectedPosedColor
+        end
+        object ghostingColor: TPanel
+          Left = 8
+          Top = 20
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clGray
+          TabOrder = 0
+          OnMouseUp = ghostingColorMouseUp
+        end
+        object nonHiddenPosedColor: TPanel
+          Left = 8
+          Top = 43
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clBlue
+          TabOrder = 1
+          OnMouseUp = nonHiddenPosedColorMouseUp
+        end
+        object selectedPosedColor: TPanel
+          Left = 8
+          Top = 66
+          Width = 20
+          Height = 20
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          Color = clRed
+          TabOrder = 2
+          OnMouseUp = selectedPosedColorMouseUp
+        end
+      end
+    end
+    object page5: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Undoing'
+      object GroupBox5: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 362
+        Height = 81
+        Caption = ' Whole program '
+        TabOrder = 0
+        object undoLimitLabel: TLabel
+          Left = 66
+          Top = 23
+          Width = 263
+          Height = 14
+          Caption = '&Number of actions to keep in undo list (1-1000 actions)'
+          FocusControl = undoLimit
+        end
+        object undoLimitOfPlantsLabel: TLabel
+          Left = 66
+          Top = 51
+          Width = 245
+          Height = 14
+          Caption = 'Number of &plants to keep in undo list (1-500 plants)'
+          FocusControl = undoLimitOfPlants
+        end
+        object undoLimit: TSpinEdit
+          Left = 8
+          Top = 20
+          Width = 53
+          Height = 23
+          MaxValue = 1000
+          MinValue = 1
+          TabOrder = 0
+          Value = 1
+        end
+        object undoLimitOfPlants: TSpinEdit
+          Left = 8
+          Top = 48
+          Width = 53
+          Height = 23
+          MaxValue = 500
+          MinValue = 1
+          TabOrder = 1
+          Value = 1
+        end
+      end
+    end
+    object page6: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Miscellaneous'
+      object GroupBox6: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 362
+        Height = 75
+        Caption = ' Main window '
+        TabOrder = 0
+        object parametersFontSizeLabel: TLabel
+          Left = 66
+          Top = 48
+          Width = 181
+          Height = 14
+          Caption = 'Font size for &parameter panels (6-20)'
+          FocusControl = parametersFontSize
+        end
+        object useMetricUnits: TCheckBox
+          Left = 8
+          Top = 20
+          Width = 319
+          Height = 17
+          Caption = '&Default to metric units instead of English in parameter panels'
+          TabOrder = 0
+        end
+        object parametersFontSize: TSpinEdit
+          Left = 8
+          Top = 43
+          Width = 53
+          Height = 23
+          MaxValue = 20
+          MinValue = 6
+          TabOrder = 1
+          Value = 8
+        end
+      end
+      object GroupBox7: TGroupBox
+        Left = 4
+        Top = 84
+        Width = 362
+        Height = 133
+        Caption = ' Whole program '
+        TabOrder = 1
+        object pauseBeforeHintLabel: TLabel
+          Left = 64
+          Top = 66
+          Width = 240
+          Height = 14
+          Caption = '&Show hint after mouse is still for (0-100 seconds)'
+          FocusControl = pauseBeforeHint
+        end
+        object pauseDuringHintLabel: TLabel
+          Left = 64
+          Top = 92
+          Width = 169
+          Height = 14
+          Caption = '&Remove hint after (0-100 seconds)'
+          FocusControl = pauseDuringHint
+        end
+        object Label1: TLabel
+          Left = 64
+          Top = 110
+          Width = 295
+          Height = 14
+          Caption = 'This applies only when long button or parameter hints are on.'
+        end
+        object openMostRecentFileAtStart: TCheckBox
+          Left = 8
+          Top = 20
+          Width = 237
+          Height = 17
+          Caption = 'Open most recent &file at start'
+          TabOrder = 0
+        end
+        object pauseBeforeHint: TSpinEdit
+          Left = 7
+          Top = 61
+          Width = 53
+          Height = 23
+          MaxValue = 100
+          MinValue = 0
+          TabOrder = 1
+          Value = 100
+        end
+        object pauseDuringHint: TSpinEdit
+          Left = 7
+          Top = 87
+          Width = 53
+          Height = 23
+          Increment = 5
+          MaxValue = 100
+          MinValue = 0
+          TabOrder = 2
+          Value = 100
+        end
+        object ignoreWindowSettingsInFile: TCheckBox
+          Left = 8
+          Top = 39
+          Width = 313
+          Height = 17
+          Caption = '&Ignore window settings (top/side, one/many) saved in file'
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object drawWithOpenGL: TCheckBox
+    Left = 413
+    Top = 266
+    Width = 149
+    Height = 17
+    Caption = 'Draw using OpenGL'
+    TabOrder = 4
+    Visible = False
+  end
+  object Panel1: TPanel
+    Left = 397
+    Top = 164
+    Width = 38
+    Height = 54
+    BevelInner = bvLowered
+    BevelOuter = bvLowered
+    TabOrder = 3
+    object Image1: TImage
+      Left = 3
+      Top = 2
+      Width = 31
+      Height = 47
+      Picture.Data = {
+        07544269746D617086040000424D860400000000000076000000280000002100
+        0000340000000100040000000000100400000000000000000000100000001000
+        000000000000000080000080000000808000800000008000800080800000C0C0
+        C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+        FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFF2FFFFFFFFFFFFFFFF0000000FFFF
+        FFFFFFFFFFFF2FFFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFF2FFFFFFFFFFF
+        FFFFF0000000FFFFFFFFFFFFFFFF2FFFFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+        FFFF2FFFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFF2FFFFFFFFFFFFFFFF000
+        0000FFFFFFFFFFFFFFFF2FFFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFF20FF
+        FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFF220FFFFFFFFFFFFFF0000000FFFF
+        FFFFFFFFFFFF222222FFFFFFFFFFF0000000FFFFFFFFFFFFFFFF2F22FFFFFFFF
+        FFFFF0000000FFFFFFFFFFFFFFFF222FFFFFFFFFFFFFF0000000FFFFFFFFFFFF
+        FFFF2222FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFF022F22FFFFFFFFFFFF000
+        0000FFFFFFFFFFFFFFF022222FFFFFFFFFFFF0000000FFFFFFFFFFFFFF002002
+        22FFFFFFFFFFF0000000FFFFFFFFFFFFF00F22FF2222FFFFFFFFF0000000FFFF
+        FFFFFFFFF0FF2F222F2222FFFFFFF0000000FFFFFFFFFFFFFFFF22F222FFFFFF
+        FFFFF0000000FFFFFFFFFFFFFFF222F222FFFFFFFFFFF0000000FFFFFFFFFFFF
+        FFF222F22FDDFFFFFFFFF0000000FFFFFFFFFFF00002F22DDDDD5DDFFFFFF000
+        0000FFFFFFFFFFFFF0F2D2DDDD22DDDFFFFFF0000000FFFFFFFFFFFFFF25D20D
+        D2D5DDDFFFFFF0000000FFFFFFFFFFFFFF2DD20DD2DDDDFFFFFFF0000000FFFF
+        FFFFFFFFF20DD22DD2DDFFFFFFFFF0000000FFFFFFFFFFFFF20DD222DD55FFFF
+        FFFFF0000000FFFFFFFFF55F200FF2522D5FFFFFFFFFF0000000FFFFFFFF5555
+        500F02F52DDFFFFFFFFFF0000000FFFFFFFF555225F0F2FD5DDFFFFFFFFFF000
+        0000FFFFFFFF5552200FF2F5DDFFFFFFFFFFF0000000FFFFFFFFD5520555520F
+        FFFFFFFFFFFFF0000000FFFFFFFFD552225552F2FFFFFFFFFFFFF0000000FFFF
+        FFFFF5DD555522FF20FFFFFFFFFFF0000000FFFFFFFD5555D555D2FFF2FFFFFF
+        FFFFF0000000FFFFFFFDDD5FF555D2FFFFFFFFFFFFFFF0000000FFFFFFFFFDFF
+        FFD5F2FFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFF22FFFFFFFFFFFFFF000
+        0000FFFFFFFFFFFFFFFF222255FFFFFFFFFFF0000000FFFFFFFFFFFFFD522222
+        25DFFFFFFFFFF0000000FFFFFFFFFFFFFD225255DDD5FFFFFFFFF0000000FFFF
+        FFFFFFF5555552555D55FFFFFFFFF0000000FFFFFFFFFFFF555DD25DD555FFFF
+        FFFFF0000000FFFFFFFFFFFF55FFDD5DDDFFFFFFFFFFF0000000FFFFFFFFFFFF
+        FFFFF55DDDFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000
+        0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFF0000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000FFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000
+      }
+      Transparent = True
+      OnClick = Image1Click
+    end
+  end
+end

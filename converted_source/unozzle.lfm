@@ -1,0 +1,246 @@
+object NozzleOptionsForm: TNozzleOptionsForm
+  Left = 521
+  Top = 265
+  BorderStyle = bsDialog
+  Caption = 'Save Nozzle/Tube Bitmap'
+  ClientHeight = 373
+  ClientWidth = 350
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 287
+    Top = 61
+    Width = 60
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 2
+    Top = 308
+    Width = 279
+    Height = 64
+    TabOrder = 0
+    object cellCountLabel: TLabel
+      Left = 7
+      Top = 27
+      Width = 93
+      Height = 14
+      Caption = 'Number of items:  5'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object cellSizeLabel: TLabel
+      Left = 7
+      Top = 11
+      Width = 192
+      Height = 14
+      Caption = 'Nozzle/tube cell width:  345 height:  534'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object fileSizeLabel: TLabel
+      Left = 7
+      Top = 42
+      Width = 129
+      Height = 14
+      Caption = 'Estimated file size:  2433 K'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object Close: TButton
+    Left = 287
+    Top = 2
+    Width = 60
+    Height = 21
+    Caption = '&Save'
+    TabOrder = 3
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 287
+    Top = 25
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 4
+  end
+  object Panel1: TPanel
+    Left = 2
+    Top = 2
+    Width = 279
+    Height = 77
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 5
+    object Label4: TLabel
+      Left = 6
+      Top = 3
+      Width = 261
+      Height = 70
+      Caption = 'You are making a bitmap file to use to create a nozzle for the Painter Image Hose brush or a picture tube for Paint Shop Pro. You can use the nozzle or tube to "spray" your picture with plants. Click Help for instructions on using the bitmap file.'
+      WordWrap = True
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 2
+    Top = 162
+    Width = 279
+    Height = 147
+    Caption = 'Nozzle/Tube options'
+    TabOrder = 1
+    object resolutionLabel: TLabel
+      Left = 10
+      Top = 60
+      Width = 112
+      Height = 14
+      Caption = '&Resolution (pixels/inch)'
+      FocusControl = resolutionEdit
+    end
+    object Label3: TLabel
+      Left = 10
+      Top = 102
+      Width = 85
+      Height = 14
+      Caption = 'Background &color'
+      FocusControl = backgroundColorPanel
+    end
+    object colorsLabel: TLabel
+      Left = 10
+      Top = 19
+      Width = 55
+      Height = 14
+      Caption = 'Color &depth'
+      FocusControl = colorType
+    end
+    object Label1: TLabel
+      Left = 55
+      Top = 122
+      Width = 183
+      Height = 14
+      Caption = '(Use a color not found in your plants.)'
+    end
+    object backgroundColorPanel: TPanel
+      Left = 29
+      Top = 119
+      Width = 20
+      Height = 20
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      TabOrder = 2
+      OnClick = backgroundColorPanelClick
+    end
+    object resolutionEdit: TSpinEdit
+      Left = 29
+      Top = 75
+      Width = 60
+      Height = 23
+      Increment = 10
+      MaxValue = 10000
+      MinValue = 10
+      TabOrder = 1
+      Value = 10
+      OnChange = resolutionEditChange
+    end
+    object colorType: TComboBox
+      Left = 29
+      Top = 36
+      Width = 155
+      Height = 19
+      Style = csOwnerDrawFixed
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ItemHeight = 13
+      Items.Strings = (
+        'From screen'
+        '2 colors (1-bit)'
+        '16 colors (4-bit)'
+        '256 colors (8-bit)'
+        '32768 colors (15-bit)'
+        '65536 colors (16-bit)'
+        '16 million colors (24-bit)'
+        '4.3 billion colors (32-bit)'
+      )
+      ParentFont = False
+      TabOrder = 0
+      OnChange = colorTypeChange
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 2
+    Top = 82
+    Width = 279
+    Height = 76
+    Caption = 'Draw which plants?'
+    TabOrder = 2
+    object useSelectedPlants: TRadioButton
+      Left = 17
+      Top = 18
+      Width = 66
+      Height = 17
+      Caption = 'se&lected'
+      TabOrder = 0
+      OnClick = changeSelection
+    end
+    object useVisiblePlants: TRadioButton
+      Left = 17
+      Top = 35
+      Width = 54
+      Height = 17
+      Caption = '&visible'
+      TabOrder = 1
+      OnClick = changeSelection
+    end
+    object useAllPlants: TRadioButton
+      Left = 17
+      Top = 52
+      Width = 36
+      Height = 17
+      Caption = '&all'
+      TabOrder = 2
+      OnClick = changeSelection
+    end
+  end
+  object ColorDialog: TColorDialog
+    Ctl3D = True
+    Left = 306
+    Top = 112
+  end
+end

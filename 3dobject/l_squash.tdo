@@ -1,0 +1,27 @@
+[Three-dimensional object]
+Name=Squash leaf
+Point=138 223 116
+Point=86 240 150
+Point=86 157 150
+Point=66 213 150
+Point=51 152 136
+Point=139 119 139
+Point=96 101 150
+Point=139 70 150
+Point=180 101 150
+Point=201 155 150
+Point=187 240 150
+Point=217 212 150
+Point=245 145 135
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=3 4 5
+Triangle=3 6 1
+Triangle=3 7 6
+Triangle=7 8 6
+Triangle=6 8 9
+Triangle=6 9 10
+Triangle=10 1 6
+Triangle=10 11 1
+Triangle=10 12 11
+Triangle=10 13 12

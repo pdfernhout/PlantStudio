@@ -1,0 +1,23 @@
+[Three-dimensional object]
+Name=Onion seedling leaf
+Point=127 251 150
+Point=128 161 140
+Point=122 254 150
+Point=120 161 137
+Point=123 112 109
+Point=130 114 114
+Point=129 104 47
+Point=135 111 111
+Point=136 160 139
+Point=131 255 150
+Triangle=1 2 3
+Triangle=3 4 2
+Triangle=4 5 2
+Triangle=2 5 6
+Triangle=5 7 6
+Triangle=7 8 6
+Triangle=6 8 2
+Triangle=2 8 9
+Triangle=9 1 2
+Triangle=1 9 10
+

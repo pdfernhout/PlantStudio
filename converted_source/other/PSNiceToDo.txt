@@ -1,0 +1,5 @@
+Things to fix in PS2.1
+
+- one/all and top/side buttons on main window need more bitmap sections for disabled state
+- consider making save/load orientation info with file optional (preference) - sometimes you
+    don't want it when you have the window looking a nice way

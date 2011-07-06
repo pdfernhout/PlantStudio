@@ -1,0 +1,196 @@
+object PickTdoForm: TPickTdoForm
+  Left = 511
+  Top = 210
+  Width = 406
+  Height = 377
+  Caption = 'Choose a 3D object'
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 334
+    Top = 245
+    Width = 60
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object grid: TDrawGrid
+    Left = 4
+    Top = 28
+    Width = 323
+    Height = 263
+    DefaultColWidth = 60
+    DefaultRowHeight = 64
+    DefaultDrawing = False
+    FixedCols = 0
+    RowCount = 20
+    FixedRows = 0
+    Options = []
+    ParentShowHint = False
+    ScrollBars = ssVertical
+    ShowHint = True
+    TabOrder = 0
+    OnDblClick = gridDblClick
+    OnDrawCell = gridDrawCell
+    OnSelectCell = gridSelectCell
+  end
+  object Close: TButton
+    Left = 334
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = 'OK'
+    Default = True
+    TabOrder = 2
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 334
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = 'Cancel'
+    TabOrder = 3
+    OnClick = cancelClick
+  end
+  object libraryGroupBox: TGroupBox
+    Left = 4
+    Top = 297
+    Width = 321
+    Height = 52
+    Caption = 'Current library'
+    TabOrder = 1
+    object fileChangedImage: TImage
+      Left = 8
+      Top = 24
+      Width = 16
+      Height = 16
+      AutoSize = True
+      Picture.Data = {
+        07544269746D6170F6000000424DF60000000000000076000000280000001000
+        0000100000000100040000000000800000000000000000000000100000001000
+        0000000000000000800000800000008080008000000080008000808000008080
+        8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+        FF00888888888888888888888888888877788888888888878878888888888878
+        8878888888888788878888888888788878888888888788878888888888788878
+        8888888887888788888888887888788888888887888788888888887878788888
+        8888877787888888888878877888888888887887888888888888877888888888
+        8888
+      }
+      Transparent = True
+    end
+    object sectionTdosChangeLibrary: TSpeedButton
+      Left = 228
+      Top = 19
+      Width = 85
+      Height = 25
+      Caption = '&Change...'
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00808888888888
+        88888088888888888888808800000800800880000BBB0888888880880BB00888
+        888880888008888888888088888888888888808800000800800880000BBB0888
+        888880880BB00888888880888008888888888088888888888888000008008000
+        88880BBB0888888888880BB00888888888888008888888888888
+      }
+      OnClick = sectionTdosChangeLibraryClick
+    end
+    object libraryFileName: TEdit
+      Left = 30
+      Top = 22
+      Width = 193
+      Height = 22
+      Color = clBtnFace
+      ReadOnly = True
+      TabOrder = 0
+    end
+  end
+  object apply: TButton
+    Left = 334
+    Top = 63
+    Width = 59
+    Height = 21
+    Caption = '&Apply'
+    TabOrder = 4
+    OnClick = applyClick
+  end
+  object newTdo: TButton
+    Left = 334
+    Top = 99
+    Width = 59
+    Height = 21
+    Caption = '&New...'
+    TabOrder = 5
+    OnClick = newTdoClick
+  end
+  object editTdo: TButton
+    Left = 334
+    Top = 123
+    Width = 59
+    Height = 21
+    Caption = '&Edit...'
+    TabOrder = 6
+    OnClick = editTdoClick
+  end
+  object mover: TButton
+    Left = 334
+    Top = 208
+    Width = 59
+    Height = 21
+    Caption = '&Mover...'
+    TabOrder = 8
+    OnClick = moverClick
+  end
+  object copyTdo: TButton
+    Left = 334
+    Top = 147
+    Width = 59
+    Height = 21
+    Caption = '&Copy...'
+    TabOrder = 7
+    OnClick = copyTdoClick
+  end
+  object deleteTdo: TButton
+    Left = 334
+    Top = 173
+    Width = 59
+    Height = 19
+    Caption = '&Delete'
+    TabOrder = 9
+    OnClick = deleteTdoClick
+  end
+  object tdos: TComboBox
+    Left = 4
+    Top = 2
+    Width = 323
+    Height = 22
+    Style = csDropDownList
+    DropDownCount = 12
+    ItemHeight = 14
+    TabOrder = 10
+    OnChange = tdosChange
+  end
+end

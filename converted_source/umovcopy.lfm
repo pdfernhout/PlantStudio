@@ -1,0 +1,333 @@
+object TemplateMoverForm: TTemplateMoverForm
+  Left = 320
+  Top = 203
+  BorderStyle = bsDialog
+  Caption = 'Template Mover'
+  ClientHeight = 348
+  ClientWidth = 589
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Style = []
+  PixelsPerInch = 96
+  Position = poScreenCenter
+  Scaled = False
+  TextHeight = 16
+  object leftTemplatesList: TListBox
+    Left = 4
+    Top = 56
+    Width = 235
+    Height = 290
+    IntegralHeight = True
+    ItemHeight = 16
+    TabOrder = 5
+    OnClick = leftTemplatesListClick
+  end
+  object rightTemplatesList: TListBox
+    Left = 266
+    Top = 56
+    Width = 235
+    Height = 290
+    IntegralHeight = True
+    ItemHeight = 16
+    TabOrder = 13
+    OnClick = rightTemplatesListClick
+  end
+  object Done: TButton
+    Left = 505
+    Top = 6
+    Width = 80
+    Height = 24
+    Cancel = True
+    Caption = '&Done'
+    Default = True
+    TabOrder = 14
+    OnClick = DoneClick
+  end
+  object CopyTemplate: TButton
+    Left = 505
+    Top = 86
+    Width = 80
+    Height = 24
+    Caption = '&Copy...'
+    TabOrder = 16
+    OnClick = CopyTemplateClick
+  end
+  object DeleteTemplate: TButton
+    Left = 505
+    Top = 116
+    Width = 80
+    Height = 24
+    Caption = '&Delete'
+    TabOrder = 17
+    OnClick = DeleteTemplateClick
+  end
+  object ObjectTypeToShow: TComboBox
+    Left = 10
+    Top = 364
+    Width = 77
+    Height = 24
+    TabStop = False
+    Style = csDropDownList
+    ItemHeight = 16
+    Items.Strings = (
+      'Bag'
+      'Soil Type'
+      'Climate'
+      'Cultivar'
+      'Pesticide Type'
+    )
+    TabOrder = 22
+    Visible = False
+  end
+  object helpButton: TBitBtn
+    Left = 505
+    Top = 236
+    Width = 80
+    Height = 24
+    Caption = '&Help'
+    TabOrder = 19
+    OnClick = helpButtonClick
+    Glyph.Data = {
+      78010000424D7801000000000000760000002800000020000000100000000100
+      04000000000000000000120B0000120B00000000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      3333333333FFFFF3333333333F797F3333333333F737373FF333333BFB999BFB
+      33333337737773773F3333BFBF797FBFB33333733337333373F33BFBFBFBFBFB
+      FB3337F33333F33337F33FBFBFB9BFBFBF3337333337F333373FFBFBFBF97BFB
+      FBF37F333337FF33337FBFBFBFB99FBFBFB37F3333377FF3337FFBFBFBFB99FB
+      FBF37F33333377FF337FBFBF77BF799FBFB37F333FF3377F337FFBFB99FB799B
+      FBF373F377F3377F33733FBF997F799FBF3337F377FFF77337F33BFBF99999FB
+      FB33373F37777733373333BFBF999FBFB3333373FF77733F7333333BFBFBFBFB
+      3333333773FFFF77333333333FBFBF33333333333777773333330000
+    }
+    NumGlyphs = 2
+  end
+  object renameTemplate: TButton
+    Left = 505
+    Top = 56
+    Width = 80
+    Height = 24
+    Caption = '&Rename...'
+    TabOrder = 15
+    OnClick = renameTemplateClick
+  end
+  object Import: TButton
+    Left = 10
+    Top = 390
+    Width = 80
+    Height = 24
+    Caption = 'Import...'
+    TabOrder = 20
+    Visible = False
+  end
+  object Export: TButton
+    Left = 10
+    Top = 416
+    Width = 80
+    Height = 24
+    Caption = 'Export...'
+    TabOrder = 21
+    Visible = False
+  end
+  object copyLeftToRight: TBitBtn
+    Left = 241
+    Top = 183
+    Width = 22
+    Height = 22
+    Hint = 'Copy from left to right'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+    OnClick = copyLeftToRightClick
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      0400000000000001000000000000000000000000000010000000000000000000
+      80000080000000808000800000008000800080800000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      3333333333333333333333333333333333333333333333333333333303333333
+      3333333383333333333333330033333333333333883333333333333330033333
+      3333333338833333333333333300333333333333338833333333333333300333
+      3333333333388333333333333333003333333333333388333333333333333003
+      3333333333333883333333333333003333333333333388333333333333300333
+      3333333333388333333333333300333333333333338833333333333330033333
+      3333333338833333333333330033333333333333883333333333333303333333
+      3333333383333333333333333333333333333333333333333333
+    }
+    NumGlyphs = 2
+  end
+  object copyRightToLeft: TBitBtn
+    Left = 241
+    Top = 211
+    Width = 22
+    Height = 22
+    Hint = 'Copy from right to left'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+    OnClick = copyRightToLeftClick
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      0400000000000001000000000000000000000000000010000000000000000000
+      80000080000000808000800000008000800080800000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      3333333333333333333333333333333333333333333333333333333333333033
+      3333333333333383333333333333003333333333333338833333333333300333
+      3333333333338833333333333300333333333333333883333333333330033333
+      3333333333883333333333330033333333333333388333333333333003333333
+      3333333388333333333333330033333333333333388333333333333330033333
+      3333333333883333333333333300333333333333333883333333333333300333
+      3333333333338833333333333333003333333333333338833333333333333033
+      3333333333333383333333333333333333333333333333333333
+    }
+    NumGlyphs = 2
+  end
+  object chooseFont: TBitBtn
+    Left = 505
+    Top = 146
+    Width = 80
+    Height = 24
+    Hint = 'Change font'
+    Caption = '&Font'
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 18
+    OnClick = chooseFontClick
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000130B0000130B00000000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      3333333333333333333333333333333333333FF3FFFFFFF33FFF003000000033
+      0000773777777733777703330033033330037FFF77F37F33377F700007330333
+      3003777777337FFFF77F303003337000007337F77F3377777773303073333033
+      003337F77F3337F377F337007333303300333777733337FF77F3330033333703
+      07333377F333377F7733330733333300033333773FF3F3777F33333399393300
+      033333337737FF777F333333339993307333333333777FF77333333333999930
+      3333333333777737333333333333333333333333333333333333333333333333
+      3333333333333333333333333333333333333333333333333333
+    }
+    NumGlyphs = 2
+  end
+  object leftTemplatesFileNameEdit: TEdit
+    Left = 4
+    Top = 4
+    Width = 233
+    Height = 24
+    TabStop = False
+    Color = clBtnFace
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object leftTemplatesFileOpen: TButton
+    Left = 3
+    Top = 29
+    Width = 61
+    Height = 25
+    Caption = 'Open...'
+    TabOrder = 1
+    OnClick = leftTemplatesFileOpenClick
+  end
+  object leftTemplatesFileNew: TButton
+    Left = 64
+    Top = 29
+    Width = 59
+    Height = 25
+    Caption = 'New...'
+    TabOrder = 2
+    OnClick = leftTemplatesFileNewClick
+  end
+  object leftTemplatesFileSave: TButton
+    Left = 122
+    Top = 29
+    Width = 43
+    Height = 25
+    Caption = 'Save'
+    TabOrder = 3
+    OnClick = leftTemplatesFileSaveClick
+  end
+  object rightTemplatesFileNameEdit: TEdit
+    Left = 268
+    Top = 4
+    Width = 233
+    Height = 24
+    TabStop = False
+    Color = clBtnFace
+    ReadOnly = True
+    TabOrder = 8
+  end
+  object rightTemplatesFileOpen: TButton
+    Left = 268
+    Top = 29
+    Width = 57
+    Height = 25
+    Caption = 'Open...'
+    TabOrder = 9
+    OnClick = rightTemplatesFileOpenClick
+  end
+  object rightTemplatesFileNew: TButton
+    Left = 325
+    Top = 29
+    Width = 65
+    Height = 25
+    Caption = 'New...'
+    TabOrder = 10
+    OnClick = rightTemplatesFileNewClick
+  end
+  object rightTemplatesFileSave: TButton
+    Left = 390
+    Top = 29
+    Width = 43
+    Height = 25
+    Caption = 'Save'
+    TabOrder = 11
+    OnClick = rightTemplatesFileSaveClick
+  end
+  object leftTemplatesFileSaveAs: TButton
+    Left = 164
+    Top = 29
+    Width = 73
+    Height = 25
+    Caption = 'Save as ...'
+    TabOrder = 4
+    OnClick = leftTemplatesFileSaveAsClick
+  end
+  object rightTemplatesFileSaveAs: TButton
+    Left = 432
+    Top = 29
+    Width = 69
+    Height = 25
+    Caption = 'Save as...'
+    TabOrder = 12
+    OnClick = rightTemplatesFileSaveAsClick
+  end
+  object exportText: TButton
+    Left = 505
+    Top = 176
+    Width = 80
+    Height = 24
+    Caption = '&Export...'
+    TabOrder = 23
+    OnClick = exportTextClick
+  end
+  object importText: TButton
+    Left = 505
+    Top = 206
+    Width = 80
+    Height = 24
+    Caption = '&Import...'
+    TabOrder = 24
+    OnClick = importTextClick
+  end
+  object FontDialog1: TFontDialog
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'System'
+    Font.Style = []
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 104
+    Top = 364
+  end
+end

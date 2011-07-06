@@ -1,0 +1,515 @@
+
+=========== MISSING UNITS =================
+buttons
+classes
+clipbrd
+comctrls
+consts
+controls
+dialogs
+extctrls
+filectrl
+forms
+gauges
+graphics
+grids
+jpeg
+lzexpand
+menus
+messages
+printers
+shellapi
+spin
+stdctrls
+sysutils
+tabnotbk
+tabs
+uabout
+uanimate
+ubmpopt
+ubmpsupport
+ubrstrat
+uclasses
+ucursor
+ucustdrw
+udebug
+uexcept
+uhints
+umover
+unoted
+unozzle
+uoptions
+uoptions3dexport
+updform
+uplantmn
+upp_boo
+upp_col
+upp_hed
+upp_int
+upp_lis
+upp_rea
+upp_scv
+upp_tdo
+uppanel
+uregister
+uregistersupport
+usliders
+usplash
+ustats
+utdomove
+utimeser
+uundo
+uwait
+uwelcome
+uwinsliders
+windows
+winprocs
+wintypes
+
+=========== RESOLVED WITH EXPRESSIONS [137] =================
+ACanvas  [1]
+Client  [1]
+R2  [2]
+aCanvas  [1]
+aPoint  [1]
+aRect  [1]
+aTriangle  [2]
+amendment  [1]
+bitmapRect  [1]
+boundsRect  [2]
+drawRect  [2]
+drawingPlant.pInflor[gender]  [1]
+drawingPlant.pLeaf  [1]
+fileInfo  [1]
+filer  [9]
+localOptions  [1]
+newAmendment  [1]
+openDialog  [1]
+options  [1]
+plant  [2]
+plant.boundsRect_pixels()  [3]
+plant.pInternode  [1]
+plant.resizingRect()  [1]
+printRect_pixels  [3]
+result  [1]
+sCurve  [2]
+saveDialog  [3]
+sectionsListBox.Canvas  [1]
+self.ageAndSizeLabel  [1]
+self.animateGrowth  [1]
+self.animatingLabel  [1]
+self.animationOptions  [3]
+self.bitmapOptions  [3]
+self.boundsRect  [1]
+self.breederToolbarPanel  [1]
+self.breedingAndTimeSeriesOptions  [3]
+self.daysAndSizeLabel  [1]
+self.drawOptions  [1]
+self.drawingPaintBox  [3]
+self.drawingPaintBox.Canvas  [1]
+self.emptyWarningPanel  [1]
+self.exportOptionsFor3D[i]  [3]
+self.helpButton  [1]
+self.horizontalSplitter  [3]
+self.invalidDrawingRect  [2]
+self.lifeCycleDaysEdit  [1]
+self.lifeCycleDaysSpin  [1]
+self.lifeCycleDragger  [1]
+self.lifeCycleEditPanel  [1]
+self.lifeCycleGraphImage  [2]
+self.lifeCyclePanel  [1]
+self.maxSizeAxisLabel  [1]
+self.noteEdit  [1]
+self.noteLabel  [1]
+self.noteMemo  [1]
+self.notePanel  [1]
+self.nozzleOptions  [3]
+self.options  [3]
+self.pAxillaryBud.tdoParams  [1]
+self.pFlower[kGenderFemale].tdoParams[partType]  [2]
+self.pFlower[kGenderMale].tdoParams[partType]  [2]
+self.pFruit.tdoParams  [1]
+self.pInflor[kGenderFemale].bractTdoParams  [1]
+self.pInflor[kGenderMale].bractTdoParams  [1]
+self.pLeaf.leafTdoParams  [1]
+self.pLeaf.stipuleTdoParams  [1]
+self.pRoot.tdoParams  [1]
+self.pSeedlingLeaf.leafTdoParams  [1]
+self.parametersPanel  [1]
+self.parametersPlantName  [1]
+self.parametersScrollBox  [1]
+self.plant.pAxillaryBud.tdoParams  [2]
+self.plant.pFlower[self.gender]  [6]
+self.plant.pFlower[self.gender].tdoParams[layerType]  [1]
+self.plant.pFlower[self.gender].tdoParams[partType]  [2]
+self.plant.pFlower[self.gender].tdoParams[uplant.kBud]  [2]
+self.plant.pFlower[self.gender].tdoParams[uplant.kPistils]  [1]
+self.plant.pFlower[self.gender].tdoParams[uplant.kStamens]  [1]
+self.plant.pFlower[uplant.kGenderFemale].tdoParams[uplant.kFirstPetals]  [2]
+self.plant.pFruit  [4]
+self.plant.pFruit.tdoParams  [6]
+self.plant.pGeneral  [1]
+self.plant.pInflor[self.gender]  [6]
+self.plant.pInflor[self.gender].bractTdoParams  [2]
+self.plant.pInflor[uplant.kGenderFemale]  [2]
+self.plant.pInternode  [5]
+self.plant.pLeaf  [4]
+self.plant.pLeaf.leafTdoParams  [1]
+self.plant.pLeaf.stipuleTdoParams  [1]
+self.plant.pMeristem  [1]
+self.plant.pRoot.tdoParams  [1]
+self.plantBitmapsIndicatorImage  [1]
+self.plantFileChangedImage  [1]
+self.plantFocusPanel  [4]
+self.plantListDrawGrid  [1]
+self.plantListDrawGrid.Canvas  [1]
+self.plantListPanel  [4]
+self.plantsDrawGrid  [3]
+self.posedPartsLabel  [1]
+self.posedPlantParts  [1]
+self.posingDetailsPanel  [1]
+self.posingGhost  [1]
+self.posingHighlight  [1]
+self.posingNotShown  [1]
+self.posingPanel  [1]
+self.posingPosePart  [1]
+self.posingUnposePart  [1]
+self.previewCache  [1]
+self.previewPaintBox  [1]
+self.progressDrawGrid  [1]
+self.progressDrawGrid.Canvas  [1]
+self.progressPaintBox  [1]
+self.progressPaintBox.Canvas  [2]
+self.realBoundsRect  [1]
+self.rotationsPanel  [1]
+self.sectionsComboBox  [2]
+self.sectionsComboBox.Canvas  [1]
+self.selectedPartLabel  [1]
+self.selectedPlantNameLabel  [1]
+self.statsScrollBox  [1]
+self.timeLabel  [1]
+self.toolbarPanel  [1]
+self.turtle.drawOptions  [3]
+self.unregisteredExportReminder  [2]
+self.verticalSplitter  [3]
+statistics  [1]
+tempBoundsRect  [3]
+tempSCurve  [1]
+thePoint  [4]
+theRect  [4]
+turtle.drawOptions  [1]
+ubreedr.BreederForm  [2]
+udomain.domain  [4]
+udomain.domain.animationOptions  [2]
+udomain.domain.bitmapOptions  [1]
+udomain.domain.nozzleOptions  [1]
+udomain.domain.options  [2]
+
+=========== UNRESOLVED WITH EXPRESSIONS [7] =================
+Rect  [6]
+UNRESOLVED.DebugForm  [1]
+UNRESOLVED.PMinMaxInfo(MSG.lparam).PDF_FIX_POINTER_ACCESS  [2]
+UNRESOLVED.Printer.Canvas  [1]
+UNRESOLVED.TimeSeriesForm  [2]
+self.tabSet  [1]
+udomain.domain.plantManager.plants  [1]
+
+=========== UNRESOLVED TYPES =============
+000001 CF_DIB
+000001 CloseClipboard
+000001 CreateStreamableObjectFromClassAndVersionInformation
+000001 DecimalSeparator
+000001 DragAcceptFiles
+000001 DragFinish
+000001 DragQueryFile
+000001 EDivByZero
+000001 EInvalidOp
+000001 EOverFlow
+000001 EUnderFlow
+000001 EZeroDivide
+000001 EmptyClipboard
+000001 ExtractFileDrive
+000001 FileGetAttr
+000001 Format
+000001 FreeMem
+000001 GDI_ERROR
+000001 GetMem
+000001 HELP_QUIT
+000001 Handle
+000001 InflateRect
+000001 KPdRandom
+000001 KPdStreamableObject
+000001 KTNil
+000001 MaxBitRec
+000001 Maxint
+000001 OpenClipboard
+000001 PALETTERGB
+000001 PdStreamableObjectClass
+000001 PhysicalOffsetX
+000001 PhysicalOffsetY
+000001 Randomize
+000001 ReallocMem
+000001 RegistrationForm
+000001 RegistrationMatch
+000001 SReadError
+000001 SWriteError
+000001 SetClipboardData
+000001 StrAlloc
+000001 StrDispose
+000001 StretchDIBits
+000001 TJPEGQualityRange
+000001 TPopupmenu
+000001 TWindowState
+000001 TimeSeriesMenuUndoRedoList
+000001 Windows_R2_BLACK
+000001 Windows_R2_COPYPEN
+000001 Windows_R2_MASKNOTPEN
+000001 Windows_R2_MASKPEN
+000001 Windows_R2_MASKPENNOT
+000001 Windows_R2_MERGENOTPEN
+000001 Windows_R2_MERGEPEN
+000001 Windows_R2_MERGEPENNOT
+000001 Windows_R2_NOP
+000001 Windows_R2_NOT
+000001 Windows_R2_NOTCOPYPEN
+000001 Windows_R2_NOTMASKPEN
+000001 Windows_R2_NOTMERGEPEN
+000001 Windows_R2_NOTXORPEN
+000001 Windows_R2_WHITE
+000001 Windows_R2_XORPEN
+000001 Wm_NextDlgCtl
+000001 brush
+000001 cdFullOpen
+000001 checkVersionNumberInPlantNameLine
+000001 clBtnHighlight
+000001 crPosingSelect
+000001 crRotate
+000001 crScroll
+000001 delete
+000001 diskFree
+000001 drawFocusRect
+000001 fileClose
+000001 fileCreate
+000001 fileGetAttr
+000001 fmShareExclusive
+000001 gdFocused
+000001 getWindowsDirectory
+000001 intersectClipRect
+000001 items
+000001 jf24Bit
+000001 kCopyingDrawing
+000001 kKfIndexTriangle
+000001 kKfObject3D
+000001 kMakeNewPlant
+000001 kOpenPlantLibrary
+000001 kPdFlowerFruit
+000001 kPdInflorescence
+000001 kPdInternode
+000001 kPdLeaf
+000001 kPdMeristem
+000001 kPdPlant
+000001 kPdPlantDrawingAmendment
+000001 kPdPlantPart
+000001 kPrintingDrawing
+000001 kReadSuperSpeedTour
+000001 kReadTutorial
+000001 kRecalculateScale
+000001 kSavingDrawingToBmp
+000001 kSavingDrawingToJpeg
+000001 kStartUsingProgram
+000001 maxLongInt
+000001 now
+000001 pi
+000001 random
+000001 sendMessage
+000001 setBounds
+000001 setlength
+000001 strPas
+000002 Bottom
+000002 CompareText
+000002 CopyPalette
+000002 DecodeTime
+000002 GMEM_DDESHARE
+000002 GMEM_MOVEABLE
+000002 GetDC
+000002 GetDIB
+000002 GlobalAlloc
+000002 GlobalFree
+000002 GlobalLock
+000002 GlobalUnlock
+000002 HELP_FINDER
+000002 Left
+000002 MAX_PATH
+000002 PMinMaxInfo
+000002 ParamCount
+000002 PdBooleanParameterPanel
+000002 PdColorParameterPanel
+000002 PdListParameterPanel
+000002 PdRealParameterPanel
+000002 PdSCurveParameterPanel
+000002 PdSmallintParameterPanel
+000002 PdTdoParameterPanel
+000002 ReleaseDC
+000002 Right
+000002 TComponentName
+000002 TGraphicsBevelCut
+000002 TTimeSeriesForm
+000002 TWMQueryEndSession
+000002 TimeSeriesMenuRedo
+000002 TimeSeriesMenuUndo
+000002 Tmessage
+000002 Top
+000002 activeControl
+000002 bvNone
+000002 bytebool
+000002 clientHeight
+000002 clientWidth
+000002 copyBitmapToCanvasWithGlobalPalette
+000002 count
+000002 crMagMinus
+000002 crMagPlus
+000002 directoryExists
+000002 exp
+000002 faReadOnly
+000002 getDeviceContext
+000002 invalidateRect
+000002 ln
+000002 rectangle
+000002 setLength
+000002 wordbool
+000003 CF_TEXT
+000003 DebugPrint
+000003 DecodeDate
+000003 FPCanvas_bsBDiagonal
+000003 FPCanvas_bsClear
+000003 FPCanvas_bsCross
+000003 FPCanvas_bsDiagCross
+000003 FPCanvas_bsFDiagonal
+000003 FPCanvas_bsHorizontal
+000003 FPCanvas_bsSolid
+000003 FPCanvas_bsVertical
+000003 FPCanvas_pmBlack
+000003 FPCanvas_pmCopy
+000003 FPCanvas_pmMask
+000003 FPCanvas_pmMaskNotPen
+000003 FPCanvas_pmMaskPenNot
+000003 FPCanvas_pmMerge
+000003 FPCanvas_pmMergeNotPen
+000003 FPCanvas_pmMergePenNot
+000003 FPCanvas_pmNop
+000003 FPCanvas_pmNot
+000003 FPCanvas_pmNotCopy
+000003 FPCanvas_pmNotMask
+000003 FPCanvas_pmNotMerge
+000003 FPCanvas_pmNotXor
+000003 FPCanvas_pmWhite
+000003 FPCanvas_pmXor
+000003 FPCanvas_psClear
+000003 FPCanvas_psDash
+000003 FPCanvas_psDashDot
+000003 FPCanvas_psDashDotDot
+000003 FPCanvas_psDot
+000003 FPCanvas_psSolid
+000003 GetDIBSizes
+000003 TGridDrawState
+000003 TPopupMenu
+000003 TWMDropFiles
+000003 clientToScreen
+000003 crDragPlant
+000003 inflateRect
+000003 read
+000003 setPixelFormatBasedOnScreenForBitmap
+000003 winprocs
+000004 GetLastError
+000004 HWND
+000004 Now
+000004 PdHeaderParameterPanel
+000004 SysErrorMessage
+000004 TPixelFormat
+000004 bottom
+000004 clBtnFace
+000004 clBtnShadow
+000004 clHighlight
+000004 clHighlightText
+000004 debugPrint
+000004 ffFixed
+000004 gdSelected
+000004 kDontRecalculateScale
+000004 lockWindowUpdate
+000004 longbool
+000004 pen
+000004 ptMinTrackSize
+000004 resizeBitmap
+000004 right
+000004 strPCopy
+000004 textFile
+000004 width
+000005 Clipboard
+000005 HBITMAP
+000005 aboutForm
+000005 modalResult
+000006 DebugForm
+000006 GetBValue
+000006 GetGValue
+000006 GetRValue
+000006 HWnd
+000006 TTabbedNotebook
+000006 TTdoMoverForm
+000006 dword
+000006 fillBitmap
+000006 height
+000006 realizePalette
+000006 rgb
+000006 selectPalette
+000007 PdHintManager
+000007 TAnimationFilesOptionsForm
+000007 TBitmapOptionsForm
+000007 TJPEGImage
+000007 TNozzleOptionsForm
+000007 TWelcomeForm
+000007 clBtnText
+000007 getDC
+000008 GetDeviceCaps
+000008 left
+000008 top
+000009 Printer
+000009 TCustomDrawOptionsForm
+000009 TMoverForm
+000009 TNoteEditForm
+000009 TOptionsForm
+000009 eof
+000009 getBValue
+000009 getGValue
+000009 getRValue
+000009 readln
+000009 releaseDC
+000010 TUndoRedoListForm
+000010 patBlt
+000011 ParamStr
+000011 TGeneric3DOptionsForm
+000012 PdStatsPanel
+000012 TGridRect
+000013 ansistring
+000014 TCustomTimer
+000014 TDateTime
+000015 THandle
+000015 startWaitMessage
+000016 pointer
+000016 splashForm
+000017 stopWaitMessage
+000018 KfWinSlider
+000018 TTabSet
+000030 HPALETTE
+000040 copy
+000045 cursor_startWait
+000046 cursor_stopWait
+000052 HDC
+000058 TimeSeriesForm
+000068 TCustomApplication
+000071 pos
+000084 PdParameterPanel
+000084 PdPlantManager
+000204 TMenuItem
+000283 TextFile
+000318 Pointer
+004266 PdForm

@@ -1,0 +1,19 @@
+[Three-dimensional object]
+Name=Corn leaf
+Point=122 228 150
+Point=103 145 159
+Point=119 144 156
+Point=141 143 157
+Point=105 92 167
+Point=121 92 167
+Point=140 90 165
+Point=127 31 139
+Triangle=1 2 3
+Triangle=3 4 1
+Triangle=2 5 3
+Triangle=3 5 6
+Triangle=3 6 7
+Triangle=3 7 4
+Triangle=5 8 6
+Triangle=6 8 7
+

@@ -1,0 +1,130 @@
+PS v2.0 to-do list as of 8/6/2000
+
+============= last-minute alpha testing problems
+
+FIX NOW:
+jpeg problem with crashing !! no progress and ran out of virtual memory - could not duplicate
+DONE disable rotation, color, scale etc boxes for posing if checkbox above turned off
+DONE on new windows (prginfo and 3ds options) forms must have scaled set to false - and one other? check (for fonts)
+DONE "show posing" clipped on P screen - also other words
+
+at least look at now:
+for posing, you cannot select parts unless the window drawing is solids (not in wire frame etc)
+
+ignore for now:
+posing a leaf, rotating it, does not rotate the stipule; rotating an inflorescence does not rotate the bracts
+breeder list index out of bounds after delete all, -1, can't find again
+breeder - send copy to main window - enabled when no plant is selected - check both menus
+add close box to welcome window - means "start using program now"
+maybe - put select all/none under edit menu
+maybe - make label for plant in panels bold to stand out more
+when expand/collapse all params in section, should have wait cursor
+
+look at later:
+issue: not obvious how to get secondary flowers
+small problem: when move biomass slider to lowest amount, number draws behind slider and gets covered up - needs more space
+when looking at one plant at a time, if click off plant no plant is selected but you can still see plant;
+  and when you right click the menu is disabled but you can still see the plant; you have to know to
+  click on the plant again to select it. messy.
+startup flicker
+startup wait cursor flicker
+in undo/redo window horizontal scroll bar even if things not long - am I doing this right?
+age line on different panel?
+no wait cursor while breeder / time series redraws
+when in breeder and part of plant is showing and you change plants per generation to be less than plants showing
+  it does not redraw that part of a plant ...
+look at optimizing time needed to load parameters for section in main window - for long ones takes forever
+consider changing how rotations go up and down - instead of going down from 0 to -10, go down from 0 to 350
+
+============= CYNTHIA
+
+make some plants using new parameters to test
+more testing of backward-compatibility on parameters
+parameter hints
+
+for posing, fix line selection algorithm with generation of triangles - it's not good enough
+
+check new commands for plant memory used
+
+new thank-you easter eggs
+
+general testing
+
+disable reg. codes that have been published on newsgroups - p sent email to c
+
+lump posing commands together if amendment is same and thing changed is same
+
+parameter for hiding first and second internodes (ugly) - or - fix width of first and second internodes
+
+10% variation in random sway as default ?? - implications ?
+
+random numbers generated in breeder are all the same (time index) - add counter or something
+
+============= PAUL
+
+rotate around point when click
+
+take look at easy way to throw gravity/wind in (angle displacement?)
+
+not redrawing when expose plants from under splitter bar (main window)
+
+============= PROBABLY NOT
+
+super-collapse?
+spin rotate button/menu option? (slow)
+
+============= DO AFTER BETA AND BEFORE 2.0 RELEASE
+
+remove beta turnoff
+change version info in splash screen
+documentation
+library files - add a few more plants created with new floral parts as examples
+save & load all old library files - with boxes and packing
+readme file
+installer
+posting on web site - news, update features list, etc
+consider starting mailing list or delphi forum or something
+change version info in delphi project options
+
+============= LATER
+
+fix bug about biomass allocation in GWI - may not be setting new biomass allocation to zero between days
+
+============= DONE
+
+BUG - in main window, intermittent problem; click on panel, plants resize - why?
+DONE posing changes saved with file, must also be saved to and loaded from memo for clipboard - do as in utdo
+DONE posing with internodes and angle curving
+read and write arrangements list with plant (remember plant file and clipboard)
+get main-window spinedits to work better with editing (make work like rotation ones in arrangement panel)
+add remembering name of plants last selected to plant file or ini options
+change general time-out date to 2002, not 2001 
+make beta version turn off in october or so
+would like to show how much memory the whole program is using (and each plant) in program info window (from about box)
+  in general, could improve program info in various ways (look at)
+DONE sum up biomasses for gravity
+fix all "raise exception.create" and "errormessage" calls so they look nicer if there is actually a problem
+  (and so they give us better info on where the problem is)
+  new format is "Problem: [error state] in method [method]."
+malloc 3d objects to reduce memory use
+test for memory leaks
+change lower bound on all biomass params to 0.0001
+put breeder age option back, in breeding options window
+undo list?
+check for version number in reading plants - both from file and from clipboard text - if version > 2 refuse to read
+write out new version number in plants and plant file - both file and clipboard
+-- decided not to refuse to read, but to warn.
+if ps2 settings file available, read. if ps2 settings file not available but ps1 file there, read that.
+always write out ps2 settings file - but call it PlantStudio2.ini
+button hints
+one more look at colors in 3DS
+
+============= NOT GOING TO DO
+
+add remembering debug window position to ini file
+
+
+
+
+
+

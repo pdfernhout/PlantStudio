@@ -1,0 +1,25 @@
+[Three-dimensional object]
+Name=Tulip petal
+Point=140 232 173
+Point=93 221 158
+Point=140 221 152
+Point=86 197 157
+Point=140 197 142
+Point=88 125 156
+Point=140 127 145
+Point=141 123 157
+Point=189 125 157
+Point=192 197 156
+Point=186 219 158
+Triangle=1 2 3
+Triangle=3 2 4
+Triangle=3 4 5
+Triangle=5 4 6
+Triangle=6 7 5
+Triangle=6 8 7
+Triangle=8 9 7
+Triangle=9 5 7
+Triangle=9 10 5
+Triangle=10 11 5
+Triangle=5 11 3
+Triangle=3 11 1

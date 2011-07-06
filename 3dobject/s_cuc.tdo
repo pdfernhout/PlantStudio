@@ -1,0 +1,18 @@
+[Three-dimensional object]
+Name=Cucumber fruit
+Point=133 234 171
+Point=119 182 150
+Point=133 182 150
+Point=117 71 150
+Point=132 71 150
+Point=132 38 169
+Point=148 71 150
+Point=150 181 150
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=3 4 5
+Triangle=4 6 5
+Triangle=6 7 5
+Triangle=7 3 5
+Triangle=7 8 3
+Triangle=3 8 1

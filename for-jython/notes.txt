@@ -1,0 +1,11 @@
+form generator 
+* shoudl use generic functions (cross platform)
+* shoudl have a blank line between widget sections
+
+code convertor:
+* shoudl remove "as" for casts
+* shoudl not do initialization at start of methods -- just let unassigned errors pop up if any (Except for structures?!)
+* array name is lost for initializtion
+* module name is lost for object creation
+* should remove any casting
+

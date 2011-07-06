@@ -1,0 +1,315 @@
+Changes after final 2.0 version
+
+
+
+
+
+Changes between beta 3 and final 2.0 version
+
+* improved action of paste & new plant - now keeps old selections for undo
+* speeded up saving & loading of settings info ten-fold (removed "please wait" message)
+* improved speed of switching between view-one and view-all modes
+* if you change the drawing options on the main window and the breeder/time series have plants
+    but are not showing, they will not redraw until they appear again
+* changed lower bound on parameter [General parameters: Age at maturity] so that
+    breeder could not produce plants with age of zero (one reason for blank plants)
+* changed delete/cut so that if you are in view-one mode it automatically selects the first plant in the list
+    (so you still have something to look at)
+* changed time series window so numbers are days the plant is old at each stage, not just stage numbers
+* made it so that you can't select by rubber banding when in view-one mode (doesn't make sense)
+* added option in all 3d output formats to write double-sided polygons (front-face color only)
+* changed parameter panels to take up all available space (looks cleaner)
+* fixed bug where window would not redraw properly when stats panel was showing
+* improved ability of posing selection to pick up really thin internode lines
+* fixed floating spin edit box in preferences window
+* improved reading from file or clipboard to deal with most cases of line wrapping (not all)
+    deals with [ or = being on next line, does NOT deal with text of name wrapped
+* changed "numerical exceptions" window to "messages" window
+* added messages when parameters are defaulted and wrapped lines are merged when reading.
+    these will appear in messages window
+* fixed small bug in "read from text" method that makes it work faster
+* added "saving preferences" message at end - taking a while to quit because of many new options
+* fixed bug where using high breeder variation would turn on varying 3D objects (supposed to be separate now)
+* changed "randomize parameters" BACK to "randomize" because the second meaning was not accurate
+* changed method of writing out preferences to settings file to make it (much) faster shutting down
+    and added message that preferences are being saved
+* changed sections list box for parameters (on left side) to drop-down list (above) to make
+    more room for parameters. looks better. moved some popup menu items around.
+* improved the 2D picture saving to the clipboard, file or printer to warn you
+    if you are about to save a picture over 10 MB, and added a memory-use estimation to the window
+* improved 2D export to JPEG; added support for variable JPEG compression
+    removed estimation for JPEG; files are small and estimation is pretty much impossible
+    removed choice of color depth for JPEG; only 24-bit is available
+* improved the way flower buds open up into flowers a bit
+* improved saving of recent file names
+* changed label in 3D object chooser to drop-down list, so you can find a 3D object by name
+    as well as by shape
+* added "send copy to main window" to time series window, works same as for breeder
+* improved speed of multiple undo/redo; added "please wait" window; disabled all windows during operation
+* in drawing area, previously if you clicked without dragging in rotate mode you would always
+    rotate in the X dimension by 10 degrees. now it uses the "rotation change with up or down click"
+    value, and a right-click rotates in the X dimension but in the opposite direction.
+* fixed a few bugs in posing - leaves were not being pruned; edit boxes were responding incorrectly
+* removed colors from posing
+* improved posing panel - added on/off buttons for three posing things
+* added posing colors to preferences window
+* revamped preferences window to make it more clear
+* moved two preferences to breeding & time series options window (max plant parts, update time series window)
+    less confusing
+* cleaned up breeding options window
+* improved posing by adding "posing selection cursor mode" with special cursor - cleaner and easier to understand
+* fixed bug where sometimes cursor was wrong when file was opened - always change to select/drag mode now
+* improved undo/redo window to say "undo" or "redo" instead of just "ok" - so it's more clear what you are doing
+* fixed a bug with posing (and with plant drawing) where inflorescences with branches were not drawing
+    individual flowers correctly
+* filled in parameter hints for new parameters, improved all parameter hints (and parameter ordering)
+    for better consistency and better explanation
+* fixed bug where file with "view one only" option set on not read correctly on loading
+* improved testing for hacked registration codes (if you paid for PS, you'll appreciate this)
+* added parameter to draw opposite as well as alternate leaflets in compound leaves
+* added saving window position and size for 3D object editor
+* improved reading of settings file so in rare condition where people used PS < 1.4 and have an old settings file
+    with comma-delimited numbers (e.g., 1,5) it will still read the file correctly
+* updated, revamped and reorganized help system; added many graphics and some tutorial sections; added
+    more comprehensive FAQ section based on emails received in last two years
+
+
+(* EMAIL FROM PERSON ABOUT UPDATING BUG
+However, with the beta I've experienced a few problems working with the main window.
+If you have over 20 plants in the file, it can be
+difficult & time-consuming to properly size & arrange them all, even with the new packing feature.
+As a result, I try to keep no more than
+12 or 13 plants in each file.  
+ 
+Also when there's 20 or more plants in the file & you go to the single plant view
+and attempt to change plants, the previous plant image
+sometimes remains & the new plant image appears on top of it.  In other words,
+when you select another plant, the previous image
+remains rather than being dismissed.  This sometimes happens when you create a
+new file or transfer new plants to an existing file.
+ 
+So, other than difficulty working with the main window, I've enjoyed using the 2.0 beta.  Each time I work with the parameters, I learn
+something new.  PlantStudio has so much depth built into it, there will always be something new to learn.
+*)
+
+
+
+
+
+Changes between beta 2 and beta 3
+
+* OBJ, LWO, VRML added
+* All 3D export formats improved and cleaned up
+* A few different possible 3DS bugs fixed (improper nesting, writebuffer, etc)
+* One possible DXF bug fixed (improper nesting)
+* Added new options for most export types
+* Merged export windows
+* Improved size estimation
+* Improved reporting (parts, colors, etc)
+
+changes to specific formats
+
+DXF
+fixed nesting bug
+
+POV
+changed thing at end to happen even if only one plant
+automatically add underscores to file name because pov can't handle them
+
+OBJ
+if you write colors a second materials file *.mtl will be written
+
+
+
+
+
+
+PlantStudio v2.0 changes
+
+============= Major new features (see below for details)
+
+* New modeled parts - pistils, stamens, five layers of petals, sepals, inflorescence bracts, leaf stipules
+* 3DS output - with same grouping options as DXF
+* Posing of individual plant parts - so you can hide or bend whole branches by hand
+* More arrangement options for plants on screen including align, size and pack
+* Multiple undo/redo at once
+
+============= Model
+
+* Renamed the flower types from "female/male" to "primary/secondary". This is
+more botanically accurate, since we had been using "female" to mean "female/hermaphroditic".
+Actually, 90% of flowering plants have "perfect" flowers with both male and female parts,
+so the new naming convention is easier to understand.
+
+* Expanded primary flowers to include pistils, stamens, five rows of petals, and sepals.
+New primary flower parameters are in new "Advanced" section.
+
+* Expanded secondary flowers to include stamens, one row of petals, and sepals.
+
+* Added parameters to draw leaf stipules (extra leafy-things at the bases of leaf stems).
+
+* Added parameters to draw inflorescence bracts (extra leafy-things at the bases of inflorescences).
+
+* Created a few new plants to illustrate the use of the new flower and leaf structures.
+
+* Added the ability to "pose" (change aspects of) individual plant parts:
+  internodes (stem segments)
+  meristems (buds)
+  leaves
+  inflorescences (flower clusters)
+  flowers/fruits
+Posing is useful when you have a plant that looks the way you want, but a flower or leaf
+or branch isn't turned the right way or isn't the size you want. You can use posing to artificially
+create (without explicitly modeling) the look of pruning, twining around things, variation,
+damage, and the effects of gravity or wind by amending branches or leaves "by hand".
+Posing changes are saved in the plant file. All posing changes are removed when you do anything that causes
+the plant's "grown" parts to change, such as randomizing the parameters or changing any parameter
+that causes the plant to restructure. (You can undo all of these changes, so if
+your posing changes suddenly disappear, just undo until you get the changes back.)
+Posing changes don't carry over into breeding, but they do show up in a time series.
+
+* Changed plant file specification to version 2.0. Files are backward compatible: PS 1.x can read 2.x files
+and display them properly (though ignoring parameters for the new 2.0 flower parts).
+PS 2.x can read 1.x files and display them properly, though all the new parameters will be set to defaults.
+If you open a 1.x version plant and save it, it will turn into a 2.x file.
+
+* Fixed bug where copying a plant with the parameter [General parameters: Random sway in drawing angles] set to
+any number greater than zero would produce a copy that drew differently (until regrown).
+
+* Reduced memory required for plants by optimizing 3D object code.
+
+* Removed limit of 1000 points on 3D objects imported from DXF.
+
+* Added new lower bound for all "optimal biomass" parameter of 0.0001 percent of maximum plant biomass.
+Reduces likelihood of problems in breeding.
+
+============= Input/Output
+
+* Added 3DS output. Grouping options are the same as for DXF and POV.
+
+* Note that a user has reported (and we have verified) that some programs don't understand our multiple-plant
+DXF files correctly, reading only one plant at a time. We haven't fixed this because (a) it's difficult
+and (b) you can use 3DS now. If you find this problem with 3DS, let us know.
+
+* Added JPEG output for 2D pictures (not for animations or nozzles/tubes).
+
+* Added registration reminder to 3D output - a box appears at the base of each plant until you register.
+Changed reminder window to reflect this.
+
+============= Overall interface
+
+* There are many new options in PS2 and so the settings file is somewhat changed. The old settings file, called
+"PlantStudio.ini" and placed in your Windows directory by default, is left alone by PS2. PS2 makes a NEW
+settings file called "PlantStudio2.ini" and places it in your Windows directory by default. PS2 copies the information
+from your PS1 settings file so you don't have to re-enter it, but then separates the new settings file out.
+We did this so that if you want to keep PS1 and PS2 on your computer at the same time (e.g., while
+playing with the beta version), you won't have to worry about losing settings. The settings
+files are supposed to be forward and backward compatible - but this way is safest.
+
+Special note: If you use an "alternate" settings file name, PS2 can't tell what version it is and
+so it will just update your settings file with the new PS2 settings.
+
+* Fixed several places where non-default-gray background didn't show through icons correctly.
+
+* Made new (nicer looking) splash screen and about box!
+
+* Added "program info" window (separate from numerical exceptions window) which can be
+accessed from about box or numerical exceptions window. Added more diagnostic information, including memory use of plants.
+
+* Improved information content of error messages throughout program (not that you should see any, but now they are more
+informative).
+
+* Plants now save their visible/invisible state, and whether they were selected or not (in the main window only),
+so that when you return to the same plant file you return to the same selections.
+
+============= Main window
+
+* Added "Undo/Redo List" where you can see all the actions you've made and undo or redo several actions at a time.
+Improved undo/redo descriptive names to give more detail. Window position is saved in settings file.
+
+* Changed "Rotations" panel to "Arrangement" panel and added several new things to it.
+* You can now set the XY location and drawing scale (size) of selected plants in the
+arrangement panel as well as with the mouse.
+* New alignment buttons line up the selected plants by top, bottom, left or right sides.
+* New equal-width and equal-height buttons make the selected plants the same height or width.
+* The "Pack" button makes all the selected plants the same height (their average height)
+and lines them up within the drawing area, wrapping around if necessary.
+* All of these things also work from the Layout menu.
+
+* Changed "Life cycle" panel to "Age" panel to save space. Otherwise it is not changed.
+
+* Added "Posing" panel to interact with new plant part posing functionality in model (see "Model" section).
+
+* Changed the default to NOT showing secondary (male) flower/inflorescence parameters (see "Model" section
+for name change). You can still see the secondary flower parameters again if you choose
+"Show Secondary Flower Parameters" in the parameter sections right-click menu.
+If you have secondary flower parameters "turned off" the primary ones will just say "Flowers",
+not "Primary flowers". People didn't seem very interested in the separate flowers, so it makes sense
+to make them harder to trip over.
+
+* Added option to show bounding boxes of plants at all times. You can use this to create a sort of
+"picture box" effect in a plant file. This option is saved with the plant file.
+
+* Fixed longstanding but infrequently seen bug where plants in main window would resize for no good reason.
+
+* Changed parameters panel to show the name of the plant whose parameters you are changing.
+
+* Added hints for headers in parameter panels. These hints describe the parameters below the header
+as a group.
+
+* Changed weird "concentrate" terminology to simply "view one plant at a time" vs. "view all plants" and "place drawing
+area on top" vs. "place drawing area on side". Added buttons in tool bar to change these more quickly.
+Saved both of these settings in plant file, so they are remembered when you open the file again.
+
+* When drawing area is on left side, moved list of plants to top of window instead of bottom. Makes more sense.
+
+* Added check to see if plants are off screen when loaded from file - if so, they are relocated onto the screen.
+
+* Added little margin to "scale to fit" -- that is, when you click Scale to Fit PlantStudio leaves a little
+margin around the drawing area instead of jamming the plants up to the edges. Looks better.
+
+* Added saving of numerical exceptions window position in settings file.
+
+============= Breeder
+
+* Changed breeder so resizing does not resize plants. Now thumbnail size is set using breeder Options dialog.
+
+* Removed all choices from bottom of breeder window and moved them to Options dialog.
+
+* Changed how breeder draws - instead of watching progress bar and seeing nothing, now you see
+the plants "play out" across the screen as they are drawn. Each plant shows a gray box while
+it is drawing. Most plants take less than a second or two to draw.
+
+* Added toolbar to breeder for setting options and breeding from the selected plant(s).
+
+* Separated three types of breeding options out for easier access: numerical parameters, colors, and 3D objects.
+Now you can vary each of these independently of the others. You can breed plants with identical structure
+but different colors, or identical colors but different structure, or identical colors and structure but
+different 3D objects. This makes it much easier to "zoom in" on a plant you like. And it's more fun!
+
+* Added new "Send Copy to Main Window" menu option to the breeder menu. This copies the selected breeder
+plant to the current file in one step (instead of dragging, or copying and pasting).
+"Sent" plants appear in the middle of the main window drawing area. You can undo this
+(it's just a copy followed by a paste).
+
+* Removed dark-blue marker for "selected generation" in breeder. Was not very informative, just annoying.
+
+* You can now make more plants per generation, up to 100.
+
+* Copied the "Draw Using" options over to the breeder and time series window (same as in main window).
+Same effect on all three windows as before.
+
+* Fixed bug where breeder plants did not retain the rotations of the parent plant. Now if you breed
+a plant from the main window, all bred plants will retain its angles. (If you breed from two parents,
+the first parent's rotation will be used for all offspring.)
+
+============= Time series window
+
+* Changes similar to those of breeder - resizing the window doesn't resize the plants, drawing goes across screen
+as you watch, no stuff at the bottom of the window.
+
+* New labels on time series stages.
+
+* Up to 100 stages allowed in time series now.
+
+

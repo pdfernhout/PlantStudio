@@ -1,0 +1,453 @@
+object BreederForm: TBreederForm
+  Left = 315
+  Top = 163
+  AutoScroll = False
+  Caption = 'Breeder'
+  ClientHeight = 191
+  ClientWidth = 427
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Menu = BreederMenu
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object plantsDrawGrid: TDrawGrid
+    Left = 2
+    Top = 48
+    Width = 345
+    Height = 141
+    Ctl3D = True
+    DefaultRowHeight = 64
+    DefaultDrawing = False
+    FixedCols = 0
+    RowCount = 30
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect]
+    ParentCtl3D = False
+    PopupMenu = BreederPopupMenu
+    TabOrder = 0
+    OnDblClick = plantsDrawGridDblClick
+    OnDragOver = plantsDrawGridDragOver
+    OnDrawCell = plantsDrawGridDrawCell
+    OnEndDrag = plantsDrawGridEndDrag
+    OnMouseDown = plantsDrawGridMouseDown
+    OnMouseUp = plantsDrawGridMouseUp
+  end
+  object emptyWarningPanel: TPanel
+    Left = 362
+    Top = 46
+    Width = 183
+    Height = 93
+    BevelOuter = bvNone
+    Color = clWindow
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 10
+      Top = 8
+      Width = 152
+      Height = 70
+      Caption = 'The breeder is empty. To make some breeder plants, select a plant (or two plants) in the main window and choose Breed from the Plant menu.'
+      WordWrap = True
+    end
+  end
+  object breederToolbarPanel: TPanel
+    Left = 2
+    Top = 10
+    Width = 339
+    Height = 33
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object variationLow: TSpeedButton
+      Left = 74
+      Top = 4
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Down = True
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888888888888888888888CCCCC88888888888CCCCC88888888888CCCCC88
+        888888888CCCCC888888888888CCC8888888888888CCC8888888888888CCC888
+        8888888888CCC88888888888888C888888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = variationLowClick
+    end
+    object variationMedium: TSpeedButton
+      Left = 102
+      Top = 4
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        88888888888888888888888CCCCCCCCC8888888CCCCCCCCC8888888CCCCCCCCC
+        88888888CCCCCCC888888888CCCCCCC8888888888CCCCC88888888888CCCCC88
+        8888888888CCC8888888888888CCC88888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = variationMediumClick
+    end
+    object variationCustom: TSpeedButton
+      Left = 156
+      Top = 4
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888CCC88CCC88CCC888CCC88CCC88CCC888CCCC8CCC8CC
+        CC8888CCC8CCC8CCC888888CCCCCCCCC88888888CCCCCCC888888888CCCCCCC8
+        888888888CCCCC888888888888CCC88888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = variationCustomClick
+    end
+    object varyColors: TSpeedButton
+      Left = 207
+      Top = 4
+      Width = 25
+      Height = 25
+      AllowAllUp = True
+      GroupIndex = 2
+      Down = True
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888C999AAADDDEEC888C999AAADDDEEC888C999AAADDDE
+        EC8888C99AAADDDEC888888C9AAADDDC88888888CAAADDC888888888CAAADDC8
+        888888888CAADC888888888888CAC88888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = varyColorsClick
+    end
+    object vary3DObjects: TSpeedButton
+      Left = 239
+      Top = 4
+      Width = 25
+      Height = 25
+      AllowAllUp = True
+      GroupIndex = 3
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888C8CCCCC8CCC8C888C88CCC88CCC8C888C888C888CCC
+        8C8888C888888888C888888C8888888C88888888C88888C888888888C88888C8
+        888888888C888C888888888888CCC88888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = vary3DObjectsClick
+    end
+    object helpButton: TSpeedButton
+      Left = 310
+      Top = 4
+      Width = 25
+      Height = 25
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888888880C08888888888888CCC88888888888880C0888
+        888888888888888888888888888C888888888888888C088888888888888CC888
+        888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+        888888888CCCCC888888888888CCC88888888888888888888888
+      }
+      OnClick = helpButtonClick
+    end
+    object variationHigh: TSpeedButton
+      Left = 129
+      Top = 4
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888CCCCCCCCCCCCC888CCCCCCCCCCCCC888CCCCCCCCCCC
+        CC8888CCCCCCCCCCC888888CCCCCCCCC88888888CCCCCCC888888888CCCCCCC8
+        888888888CCCCC888888888888CCC88888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = variationHighClick
+    end
+    object variationNoneNumeric: TSpeedButton
+      Left = 47
+      Top = 4
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888888888C888888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C888888888888888C8888
+        88888888888C888888888888888C888888888888888C88888888
+      }
+      OnClick = variationNoneNumericClick
+    end
+    object breedButton: TSpeedButton
+      Left = 5
+      Top = 4
+      Width = 25
+      Height = 25
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        0400000000000001000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        88888888888888888888888888888888888888888888888888888CCCCCC8CCCC
+        CC8887777778777777888CFFFFC8CFFFFC8887888878788887888CFF2FC8CF2F
+        FC8887887878787887888CF2FFC8CFF2FC8887878878788787888CFFFFC8CFFF
+        FC8887888878788887888CCCCCC8CCCCCC888777777877777788888888888888
+        888888888888888888888CCCCCC88888888887777778888888888CFFFFC88888
+        888887888878888888888CF22FC88888888887877878888888888CF2FFC88888
+        888887878878888888888CFFFFC88888888887888878888888888CCCCCC88888
+        8888877777788888888888888888888888888888888888888888
+      }
+      NumGlyphs = 2
+      OnClick = breedButtonClick
+    end
+  end
+  object BreederMenu: TMainMenu
+    Left = 360
+    Top = 16
+    object BreederMenuEdit: TMenuItem
+      Caption = '&Edit'
+      object BreederMenuUndo: TMenuItem
+        Caption = '&Undo'
+        ShortCut = 16474
+        OnClick = BreederMenuUndoClick
+      end
+      object BreederMenuRedo: TMenuItem
+        Caption = '&Redo'
+        ShortCut = 24666
+        OnClick = BreederMenuRedoClick
+      end
+      object BreederMenuUndoRedoList: TMenuItem
+        Caption = 'Undo/Redo &List...'
+        OnClick = BreederMenuUndoRedoListClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object BreederMenuCopy: TMenuItem
+        Caption = '&Copy'
+        ShortCut = 16451
+        OnClick = BreederMenuCopyClick
+      end
+      object BreederMenuPaste: TMenuItem
+        Caption = '&Paste'
+        ShortCut = 16470
+        OnClick = BreederMenuPasteClick
+      end
+      object BreederMenuSendCopyToMainWindow: TMenuItem
+        Caption = '&Send Copy to Main Window'
+        OnClick = BreederMenuSendCopyToMainWindowClick
+      end
+    end
+    object BreederMenuPlant: TMenuItem
+      Caption = '&Breed'
+      object BreederMenuBreed: TMenuItem
+        Caption = '&Breed'
+        ShortCut = 16450
+        OnClick = BreederMenuBreedClick
+      end
+      object BreederMenuMakeTimeSeries: TMenuItem
+        Caption = 'Make &Time Series'
+        ShortCut = 16468
+        OnClick = BreederMenuMakeTimeSeriesClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object BreederMenuDeleteRow: TMenuItem
+        Caption = 'Delete &Generation'
+        ShortCut = 46
+        OnClick = BreederMenuDeleteRowClick
+      end
+      object BreederMenuDeleteAll: TMenuItem
+        Caption = 'Delete &All'
+        OnClick = BreederMenuDeleteAllClick
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object BreederMenuRandomize: TMenuItem
+        Caption = '&Randomize'
+        ShortCut = 16466
+        OnClick = BreederMenuRandomizeClick
+      end
+      object BreederMenuRandomizeAll: TMenuItem
+        Caption = 'Randomize A&ll'
+        ShortCut = 16449
+        OnClick = BreederMenuRandomizeAllClick
+      end
+    end
+    object BreederMenuOptions: TMenuItem
+      Caption = '&Options'
+      object BreederMenuOptionsDrawAs: TMenuItem
+        Caption = '&Draw Using'
+        object BreederMenuOptionsFastDraw: TMenuItem
+          Caption = '&Bounding Boxes'
+          Checked = True
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = BreederMenuOptionsFastDrawClick
+        end
+        object BreederMenuOptionsMediumDraw: TMenuItem
+          Caption = '&Wire Frames'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = BreederMenuOptionsMediumDrawClick
+        end
+        object BreederMenuOptionsBestDraw: TMenuItem
+          Caption = '&Solids'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = BreederMenuOptionsBestDrawClick
+        end
+        object BreederMenuOptionsCustomDraw: TMenuItem
+          Caption = '&Custom...'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = BreederMenuOptionsCustomDrawClick
+        end
+      end
+      object BreederMenuVariation: TMenuItem
+        Caption = 'Vary &Numbers'
+        object BreederMenuVariationNone: TMenuItem
+          Caption = '&None'
+          GroupIndex = 1
+          RadioItem = True
+          OnClick = BreederMenuVariationNoneClick
+        end
+        object BreederMenuVariationLow: TMenuItem
+          Caption = '&Low'
+          GroupIndex = 1
+          RadioItem = True
+          OnClick = BreederMenuVariationLowClick
+        end
+        object BreederMenuVariationMedium: TMenuItem
+          Caption = '&Medium'
+          Checked = True
+          GroupIndex = 1
+          RadioItem = True
+          OnClick = BreederMenuVariationMediumClick
+        end
+        object BreederMenuVariationHigh: TMenuItem
+          Caption = '&High'
+          GroupIndex = 1
+          RadioItem = True
+          OnClick = BreederMenuVariationHighClick
+        end
+        object BreederMenuVariationCustom: TMenuItem
+          Caption = '&Custom...'
+          GroupIndex = 1
+          RadioItem = True
+          OnClick = BreederMenuVariationCustomClick
+        end
+      end
+      object BreederMenuVaryColors: TMenuItem
+        Caption = 'Vary &Colors'
+        GroupIndex = 1
+        OnClick = BreederMenuVaryColorsClick
+      end
+      object BreederMenuVary3DObjects: TMenuItem
+        Caption = 'Vary &3D Objects'
+        GroupIndex = 1
+        OnClick = BreederMenuVary3DObjectsClick
+      end
+      object N6: TMenuItem
+        Caption = '-'
+      end
+      object BreederMenuOtherOptions: TMenuItem
+        Caption = '&More Options...'
+        OnClick = BreederMenuOtherOptionsClick
+      end
+    end
+    object MenuBreederHelp: TMenuItem
+      Caption = '&Help'
+      object BreederMenuHelpOnBreeding: TMenuItem
+        Caption = 'Help on &Breeding'
+        OnClick = BreederMenuHelpOnBreedingClick
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object BreederMenuHelpTopics: TMenuItem
+        Caption = '&Help Topics'
+        OnClick = BreederMenuHelpTopicsClick
+      end
+    end
+  end
+  object BreederPopupMenu: TPopupMenu
+    Left = 396
+    Top = 12
+    object BreederPopupMenuBreed: TMenuItem
+      Caption = '&Breed'
+      OnClick = BreederPopupMenuBreedClick
+    end
+    object N5: TMenuItem
+      Caption = '-'
+    end
+    object BreederPopupMenuCopy: TMenuItem
+      Caption = '&Copy'
+      OnClick = BreederPopupMenuCopyClick
+    end
+    object BreederPopupMenuPaste: TMenuItem
+      Caption = '&Paste'
+      OnClick = BreederPopupMenuPasteClick
+    end
+    object BreederPopupMenuSendCopytoMainWindow: TMenuItem
+      Caption = '&Send Copy to Main Window'
+      OnClick = BreederPopupMenuSendCopytoMainWindowClick
+    end
+    object N7: TMenuItem
+      Caption = '-'
+    end
+    object BreederPopupMenuRandomize: TMenuItem
+      Caption = '&Randomize'
+      OnClick = BreederPopupMenuRandomizeClick
+    end
+    object BreederPopupMenuMakeTimeSeries: TMenuItem
+      Caption = '&Make Time Series'
+      OnClick = BreederPopupMenuMakeTimeSeriesClick
+    end
+    object N8: TMenuItem
+      Caption = '-'
+    end
+    object BreederPopupMenuDeleteRow: TMenuItem
+      Caption = 'Delete &generation'
+      OnClick = BreederPopupMenuDeleteRowClick
+    end
+  end
+end

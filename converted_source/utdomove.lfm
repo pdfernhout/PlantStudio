@@ -1,0 +1,247 @@
+object TdoMoverForm: TTdoMoverForm
+  Left = 388
+  Top = 235
+  AutoScroll = False
+  Caption = '3D Object Mover'
+  ClientHeight = 310
+  ClientWidth = 404
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poScreenCenter
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object previewImage: TImage
+    Left = 152
+    Top = 4
+    Width = 100
+    Height = 60
+    OnMouseUp = previewImageMouseUp
+  end
+  object leftTdoFileChangedIndicator: TImage
+    Left = 8
+    Top = 30
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888877788888888888878878888888888878
+      8878888888888788878888888888788878888888888788878888888888788878
+      8888888887888788888888887888788888888887888788888888887878788888
+      8888877787888888888878877888888888887887888888888888877888888888
+      8888
+    }
+    Transparent = True
+  end
+  object rightTdoFileChangedIndicator: TImage
+    Left = 294
+    Top = 30
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888877788888888888878878888888888878
+      8878888888888788878888888888788878888888888788878888888888788878
+      8888888887888788888888887888788888888887888788888888887878788888
+      8888877787888888888878877888888888887887888888888888877888888888
+      8888
+    }
+  end
+  object helpButton: TSpeedButton
+    Left = 152
+    Top = 264
+    Width = 100
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object leftTdoFileNameEdit: TEdit
+    Left = 4
+    Top = 4
+    Width = 140
+    Height = 20
+    AutoSelect = False
+    Color = clBtnFace
+    Ctl3D = False
+    ParentCtl3D = False
+    ReadOnly = True
+    TabOrder = 0
+    Text = 'c:\PlantStudio\plants1.pla'
+  end
+  object leftOpenClose: TButton
+    Left = 30
+    Top = 26
+    Width = 50
+    Height = 21
+    Caption = '&Open...'
+    TabOrder = 1
+    OnClick = leftOpenCloseClick
+  end
+  object rightTdoFileNameEdit: TEdit
+    Left = 257
+    Top = 4
+    Width = 140
+    Height = 20
+    AutoSelect = False
+    Color = clBtnFace
+    Ctl3D = False
+    ParentCtl3D = False
+    ReadOnly = True
+    TabOrder = 2
+    Text = 'c:\PlantStudio\newplants.pla'
+  end
+  object rightOpenClose: TButton
+    Left = 280
+    Top = 28
+    Width = 50
+    Height = 21
+    Caption = '&Open...'
+    TabOrder = 3
+    OnClick = rightOpenCloseClick
+  end
+  object newFile: TButton
+    Left = 345
+    Top = 28
+    Width = 50
+    Height = 21
+    Caption = '&New...'
+    TabOrder = 6
+    OnClick = newFileClick
+  end
+  object transfer: TButton
+    Left = 152
+    Top = 76
+    Width = 100
+    Height = 21
+    Caption = '&Transfer >>'
+    TabOrder = 7
+    OnClick = transferClick
+  end
+  object undo: TButton
+    Left = 152
+    Top = 171
+    Width = 100
+    Height = 21
+    Caption = '&Undo duplicate'
+    TabOrder = 11
+    OnClick = undoClick
+  end
+  object redo: TButton
+    Left = 152
+    Top = 195
+    Width = 100
+    Height = 21
+    Caption = '&Redo last'
+    TabOrder = 12
+    OnClick = redoClick
+  end
+  object rename: TButton
+    Left = 152
+    Top = 148
+    Width = 100
+    Height = 21
+    Caption = 'Ren&ame...'
+    TabOrder = 10
+    OnClick = renameClick
+  end
+  object duplicate: TButton
+    Left = 152
+    Top = 100
+    Width = 100
+    Height = 21
+    Caption = '&Duplicate'
+    TabOrder = 8
+    OnClick = duplicateClick
+  end
+  object delete: TButton
+    Left = 152
+    Top = 124
+    Width = 100
+    Height = 21
+    Caption = 'D&elete'
+    TabOrder = 9
+    OnClick = deleteClick
+  end
+  object leftTdoList: TDrawGrid
+    Left = -24
+    Top = 54
+    Width = 140
+    Height = 333
+    ColCount = 1
+    DefaultRowHeight = 16
+    DefaultDrawing = False
+    FixedCols = 0
+    FixedRows = 0
+    GridLineWidth = 0
+    Options = []
+    ScrollBars = ssVertical
+    TabOrder = 4
+    OnDblClick = leftTdoListDblClick
+    OnDragOver = leftTdoListDragOver
+    OnDrawCell = leftTdoListDrawCell
+    OnEndDrag = leftTdoListEndDrag
+    OnKeyDown = leftTdoListKeyDown
+    OnMouseDown = leftTdoListMouseDown
+  end
+  object rightTdoList: TDrawGrid
+    Left = 259
+    Top = 62
+    Width = 140
+    Height = 245
+    ColCount = 1
+    DefaultRowHeight = 16
+    DefaultDrawing = False
+    FixedCols = 0
+    FixedRows = 0
+    GridLineWidth = 0
+    TabOrder = 5
+    OnDblClick = rightTdoListDblClick
+    OnDragOver = rightTdoListDragOver
+    OnDrawCell = rightTdoListDrawCell
+    OnEndDrag = rightTdoListEndDrag
+    OnKeyDown = rightTdoListKeyDown
+    OnMouseDown = rightTdoListMouseDown
+  end
+  object editTdo: TButton
+    Left = 153
+    Top = 219
+    Width = 100
+    Height = 21
+    Caption = 'Ed&it'
+    TabOrder = 13
+    OnClick = editTdoClick
+  end
+  object close: TButton
+    Left = 152
+    Top = 288
+    Width = 100
+    Height = 21
+    Caption = '&Quit'
+    TabOrder = 14
+    OnClick = closeClick
+  end
+end

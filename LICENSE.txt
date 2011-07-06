@@ -1,0 +1,13 @@
+The PlantStudio Botanical Illustration Software source code is:
+Copyright 1993-2011 Cynthia F. Kurtz and Paul D. Fernhout
+
+The PlantStudio Botanical Illustration Software source code included here is hereby placed 
+under the GNU GPL v3.0 or any later version. See: http://www.gnu.org/licenses/gpl.html
+
+The "PlantStudio" name itself is a trademark of Cynthia F. Kurtz and Paul D. Fernhout.
+Basically, similar to with the "Linux" trademork,
+  http://www.linuxfoundation.org/programs/legal/trademark
+if you make useful derivatives of the code under the GPL about 3D models of plants and similar things,
+and true to the purpose of openness and sharing as we see it, and with proper attribution as to the origins
+of the software, we will permit you to use the trademark. Otherwise we will request you to change
+the name of the software you distribute to avoid confusion.

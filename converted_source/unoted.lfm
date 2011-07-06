@@ -1,0 +1,71 @@
+object NoteEditForm: TNoteEditForm
+  Left = 609
+  Top = 214
+  Width = 356
+  Height = 294
+  Caption = 'Edit note for plant'
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object helpButton: TSpeedButton
+    Left = 265
+    Top = 64
+    Width = 80
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object OK: TButton
+    Left = 265
+    Top = 2
+    Width = 80
+    Height = 21
+    Caption = '&OK'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object cancel: TButton
+    Left = 265
+    Top = 25
+    Width = 80
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object noteEditMemo: TMemo
+    Left = 2
+    Top = 2
+    Width = 259
+    Height = 261
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
+  object wrapLines: TCheckBox
+    Left = 272
+    Top = 92
+    Width = 75
+    Height = 17
+    Caption = '&wrap lines'
+    TabOrder = 3
+    OnClick = wrapLinesClick
+  end
+end

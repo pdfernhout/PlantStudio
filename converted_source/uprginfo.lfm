@@ -1,0 +1,77 @@
+object ProgramInfoForm: TProgramInfoForm
+  Left = 310
+  Top = 266
+  AutoScroll = False
+  Caption = 'Program Information'
+  ClientHeight = 301
+  ClientWidth = 450
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  Scaled = False
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object helpButton: TSpeedButton
+    Left = 332
+    Top = 135
+    Width = 113
+    Height = 25
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object Close: TButton
+    Left = 332
+    Top = 4
+    Width = 113
+    Height = 21
+    Cancel = True
+    Caption = '&Close'
+    TabOrder = 0
+    OnClick = CloseClick
+  end
+  object saveListAs: TButton
+    Left = 332
+    Top = 83
+    Width = 113
+    Height = 21
+    Caption = '&Save as...'
+    TabOrder = 1
+    OnClick = saveListAsClick
+  end
+  object copyToClipboard: TButton
+    Left = 332
+    Top = 55
+    Width = 113
+    Height = 21
+    Cancel = True
+    Caption = 'Copy to Cli&pboard'
+    TabOrder = 2
+    OnClick = copyToClipboardClick
+  end
+  object infoList: TMemo
+    Left = 2
+    Top = 2
+    Width = 323
+    Height = 295
+    Lines.Strings = (
+      'infoList'
+    )
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+end

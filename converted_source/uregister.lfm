@@ -1,0 +1,196 @@
+object RegistrationForm: TRegistrationForm
+  Left = 296
+  Top = 154
+  BorderStyle = bsDialog
+  Caption = 'PlantStudio Registration'
+  ClientHeight = 255
+  ClientWidth = 436
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Label11: TLabel
+    Left = 8
+    Top = 129
+    Width = 320
+    Height = 28
+    Caption = 'Enter your registration name and personalized registration code below, EXACTLY as they appear in the confirmation you received.'
+    WordWrap = True
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 11
+    Width = 263
+    Height = 14
+    Caption = 'To purchase a registration code, go to our web site at:'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 53
+    Width = 150
+    Height = 14
+    Caption = 'and follow the directions there.'
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 77
+    Width = 322
+    Height = 42
+    Caption = '(Clicking ''Open browser'' may not work depending on your system setup. If it doesn''t, open your browser yourself, copy the address above, and paste it into the address area of your browser.)'
+    WordWrap = True
+  end
+  object Label6: TLabel
+    Left = 65
+    Top = 231
+    Width = 102
+    Height = 14
+    Caption = 'Then click here ----->'
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 159
+    Width = 328
+    Height = 59
+    BevelInner = bvLowered
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object Label3: TLabel
+      Left = 8
+      Top = 9
+      Width = 87
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Registration &Name'
+      FocusControl = registrationNameEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 10
+      Top = 33
+      Width = 85
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Registration Co&de'
+      FocusControl = registrationCodeEdit
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object registrationNameEdit: TEdit
+      Left = 101
+      Top = 7
+      Width = 222
+      Height = 22
+      TabOrder = 0
+    end
+    object registrationCodeEdit: TEdit
+      Left = 101
+      Top = 31
+      Width = 222
+      Height = 22
+      TabOrder = 1
+    end
+  end
+  object orderPageEdit: TEdit
+    Left = 8
+    Top = 29
+    Width = 220
+    Height = 22
+    Color = clBtnFace
+    ReadOnly = True
+    TabOrder = 0
+    Text = 'http://www.kurtz-fernhout.com/order.htm'
+  end
+  object openBrowser: TButton
+    Left = 234
+    Top = 29
+    Width = 87
+    Height = 21
+    Caption = '&Open browser'
+    TabOrder = 1
+    OnClick = openBrowserClick
+  end
+  object close: TButton
+    Left = 343
+    Top = 4
+    Width = 90
+    Height = 21
+    Caption = '&Close'
+    TabOrder = 4
+    OnClick = closeClick
+  end
+  object readLicense: TButton
+    Left = 343
+    Top = 67
+    Width = 90
+    Height = 21
+    Caption = 'Read &License'
+    TabOrder = 6
+    OnClick = readLicenseClick
+  end
+  object moreInfo: TButton
+    Left = 343
+    Top = 40
+    Width = 90
+    Height = 23
+    Caption = '&Why Register?'
+    TabOrder = 5
+    OnClick = moreInfoClick
+  end
+  object registerMe: TButton
+    Left = 169
+    Top = 227
+    Width = 109
+    Height = 21
+    Caption = '&Register Me!'
+    TabOrder = 3
+    OnClick = registerMeClick
+  end
+  object PrintButton: TButton
+    Left = 343
+    Top = 103
+    Width = 90
+    Height = 21
+    Caption = '&Print'
+    TabOrder = 7
+    Visible = False
+    OnClick = PrintButtonClick
+  end
+  object thankYou: TRichEdit
+    Left = 344
+    Top = 234
+    Width = 333
+    Height = 250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 8
+  end
+  object PrintDialog: TPrintDialog
+    Left = 308
+    Top = 2
+  end
+end

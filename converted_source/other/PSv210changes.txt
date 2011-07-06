@@ -1,0 +1,16 @@
+Changes between final 2.01 version and 2.1
+
+* transverse sections
+* overrides must have section as well as param name - not backward compatible - new overrides
+    cannot be read by older versions - probably not a problem, people don't use this much
+* fixed bug where does not check for PLA extension when opening from sendto
+* changed bounds on all petals, sepals, bracts, pistils, stamens from (1-10) to (0-30)
+* added option to ignore window settings in file (useful if you like the window a certain way)
+* updated splash screen and about box for 2002 copyright and (R) trademark
+* fixed bug where animations would not save to a hard disk with a very large amount of free space
+* when checking to see that there is enough space to save files, padded estimate to be more safe
+* fixed help and options dialog where it said paste rect size was for paste + paste from text, is just for latter
+* fixed small bug where plants dragged from breeder when looking at one plant at a time were not sizing correctly
+
+
+

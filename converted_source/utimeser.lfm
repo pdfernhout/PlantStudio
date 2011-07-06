@@ -1,0 +1,182 @@
+object TimeSeriesForm: TTimeSeriesForm
+  Left = 366
+  Top = 184
+  Width = 520
+  Height = 119
+  Caption = 'Time series'
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  Menu = MainMenu1
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object grid: TDrawGrid
+    Left = 8
+    Top = 4
+    Width = 185
+    Height = 67
+    ColCount = 1
+    DefaultRowHeight = 64
+    DefaultDrawing = False
+    FixedCols = 0
+    RowCount = 2
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine]
+    PopupMenu = TimeSeriesPopupMenu
+    TabOrder = 0
+    OnDragOver = gridDragOver
+    OnDrawCell = gridDrawCell
+    OnEndDrag = gridEndDrag
+    OnMouseDown = gridMouseDown
+  end
+  object emptyWarningPanel: TPanel
+    Left = 206
+    Top = 10
+    Width = 241
+    Height = 57
+    BevelOuter = bvNone
+    Color = clWindow
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 8
+      Top = 8
+      Width = 221
+      Height = 42
+      Caption = 'The time series window is empty. To fill it, select a plant in the main window and choose Make Time Series from the Plant menu.'
+      WordWrap = True
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 478
+    Top = 2
+    object TimeSeriesMenuEdit: TMenuItem
+      Caption = '&Edit'
+      object TimeSeriesMenuUndo: TMenuItem
+        Caption = '&Undo'
+        ShortCut = 16474
+        OnClick = TimeSeriesMenuUndoClick
+      end
+      object TimeSeriesMenuRedo: TMenuItem
+        Caption = '&Redo'
+        ShortCut = 24666
+        OnClick = TimeSeriesMenuRedoClick
+      end
+      object TimeSeriesMenuUndoRedoList: TMenuItem
+        Caption = 'Undo/Redo &List...'
+        OnClick = TimeSeriesMenuUndoRedoListClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object TimeSeriesMenuCopy: TMenuItem
+        Caption = '&Copy'
+        ShortCut = 16451
+        OnClick = TimeSeriesMenuCopyClick
+      end
+      object TimeSeriesMenuPaste: TMenuItem
+        Caption = '&Paste'
+        ShortCut = 16470
+        OnClick = TimeSeriesMenuPasteClick
+      end
+      object TimeSeriesMenuSendCopy: TMenuItem
+        Caption = '&Send Copy to Main Window'
+        OnClick = TimeSeriesMenuSendCopyClick
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object TimeSeriesMenuBreed: TMenuItem
+        Caption = '&Breed'
+        ShortCut = 16450
+        OnClick = TimeSeriesMenuBreedClick
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object TimeSeriesMenuDelete: TMenuItem
+        Caption = '&Delete Time Series'
+        ShortCut = 46
+        OnClick = TimeSeriesMenuDeleteClick
+      end
+    end
+    object TimeSeriesMenuOptions: TMenuItem
+      Caption = '&Options'
+      object TimeSeriesMenuOptionsDrawAs: TMenuItem
+        Caption = '&Draw Using'
+        object TimeSeriesMenuOptionsFastDraw: TMenuItem
+          Caption = '&Bounding Boxes'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = TimeSeriesMenuOptionsFastDrawClick
+        end
+        object TimeSeriesMenuOptionsMediumDraw: TMenuItem
+          Caption = '&Wire Frames'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = TimeSeriesMenuOptionsMediumDrawClick
+        end
+        object TimeSeriesMenuOptionsBestDraw: TMenuItem
+          Caption = '&Solids'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = TimeSeriesMenuOptionsBestDrawClick
+        end
+        object TimeSeriesMenuOptionsCustomDraw: TMenuItem
+          Caption = '&Custom...'
+          GroupIndex = 10
+          RadioItem = True
+          OnClick = TimeSeriesMenuOptionsCustomDrawClick
+        end
+      end
+      object TimeSeriesMenuOptionsStages: TMenuItem
+        Caption = '&More Options...'
+        OnClick = TimeSeriesMenuOptionsStagesClick
+      end
+    end
+    object TimeSeriesMenuHelp: TMenuItem
+      Caption = '&Help'
+      object TimeSeriesMenuHelpOnTimeSeries: TMenuItem
+        Caption = 'Help on &Time Series'
+        OnClick = TimeSeriesMenuHelpOnTimeSeriesClick
+      end
+      object N5: TMenuItem
+        Caption = '-'
+      end
+      object TimeSeriesMenuHelpTopics: TMenuItem
+        Caption = '&Help Topics'
+        OnClick = TimeSeriesMenuHelpTopicsClick
+      end
+    end
+  end
+  object TimeSeriesPopupMenu: TPopupMenu
+    Left = 468
+    Top = 38
+    object TimeSeriesPopupMenuCopy: TMenuItem
+      Caption = '&Copy'
+      OnClick = TimeSeriesPopupMenuCopyClick
+    end
+    object TimeSeriesPopupMenuPaste: TMenuItem
+      Caption = '&Paste'
+      OnClick = TimeSeriesPopupMenuPasteClick
+    end
+    object TimeSeriesPopupMenuSendCopy: TMenuItem
+      Caption = '&Send Copy to Main Window'
+      OnClick = TimeSeriesMenuSendCopyClick
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object TimeSeriesPopupMenuBreed: TMenuItem
+      Caption = 'Breed'
+      OnClick = TimeSeriesPopupMenuBreedClick
+    end
+  end
+end

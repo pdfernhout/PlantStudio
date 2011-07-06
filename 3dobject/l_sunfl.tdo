@@ -1,0 +1,25 @@
+[Three-dimensional object]
+Name=Sunflower leaf
+Point=130 235 164
+Point=90 189 168
+Point=130 181 169
+Point=85 155 150
+Point=130 131 150
+Point=100 115 138
+Point=130 104 139
+Point=130 61 95
+Point=160 115 135
+Point=175 154 150
+Point=170 188 162
+Triangle=1 2 3
+Triangle=3 2 4
+Triangle=3 4 5
+Triangle=5 4 6
+Triangle=5 6 7
+Triangle=7 6 8
+Triangle=9 7 8
+Triangle=9 5 7
+Triangle=9 10 5
+Triangle=5 10 3
+Triangle=3 10 11
+Triangle=3 11 1

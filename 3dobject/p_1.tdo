@@ -1,0 +1,12 @@
+[Three-dimensional object]
+Name=Trial flower 1
+Point=140 233 150
+Point=112 154 144
+Point=163 154 144
+Point=139 125 109
+Point=104 134 116
+Point=175 134 112
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=2 5 4
+Triangle=4 6 3

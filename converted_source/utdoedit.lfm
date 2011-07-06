@@ -1,0 +1,458 @@
+object TdoEditorForm: TTdoEditorForm
+  Left = 505
+  Top = 155
+  AutoScroll = False
+  Caption = '3D Object Editor'
+  ClientHeight = 383
+  ClientWidth = 447
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnKeyUp = FormKeyUp
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 373
+    Top = 286
+    Width = 70
+    Height = 23
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object ok: TButton
+    Left = 373
+    Top = 4
+    Width = 70
+    Height = 21
+    Caption = '&OK'
+    TabOrder = 3
+    OnClick = okClick
+  end
+  object cancel: TButton
+    Left = 373
+    Top = 27
+    Width = 70
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    TabOrder = 4
+    OnClick = cancelClick
+  end
+  object undoLast: TButton
+    Left = 373
+    Top = 100
+    Width = 70
+    Height = 21
+    Caption = '&Undo last'
+    TabOrder = 6
+    OnClick = undoLastClick
+  end
+  object redoLast: TButton
+    Left = 373
+    Top = 124
+    Width = 70
+    Height = 21
+    Caption = '&Redo last'
+    TabOrder = 7
+    OnClick = redoLastClick
+  end
+  object toolbarPanel: TPanel
+    Left = -1
+    Top = -2
+    Width = 368
+    Height = 32
+    BevelOuter = bvLowered
+    TabOrder = 0
+    object dragCursorMode: TSpeedButton
+      Left = 79
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888888808888888888888800088888888888808080888888888888808888
+        888888888888888888888808880008880888808880CCC0888088000080CCC080
+        0008808880CCC088808888088800088808888888888888888888888888808888
+        8888888880808088888888888800088888888888888088888888
+      }
+      OnClick = dragCursorModeClick
+    end
+    object magnifyCursorMode: TSpeedButton
+      Left = 56
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888888888888888888888888888880088888888888880C08888880000080C
+        08888880CCCCC0C08888880C8FFE8C08888880C8FFFFE8C0888880CFEFFFFEC0
+        888880CEEFFFFFC0888880CFEEFFFFC0888880C8EEEEF8C08888880C8FEF8C08
+        88888880CCCCC088888888880000088888888888888888888888
+      }
+      OnClick = magnifyCursorModeClick
+    end
+    object scrollCursorMode: TSpeedButton
+      Left = 6
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888800000000888888880CCCCCC0888888880CCCCCC0888888880CCCCCC0
+        88888880CCCCCCCC0888880CCCCCCCCCC088800CCCCCCCCCC08880CCCCCCCCCC
+        C08880CC00C0C0C0C08880CC00C0C0C0C088880080C0C0C0C088888880C0C0C0
+        0888888880C0C0C0888888888808080888888888888888888888
+      }
+      OnClick = scrollCursorModeClick
+    end
+    object addTrianglePointsCursorMode: TSpeedButton
+      Left = 104
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF008C0888888888
+        0C88CCC000000000CCC80C08888888880C088088888088888088880888808888
+        0888880880000088088888808880888088888880888088808888888808888808
+        8888888808888808888888888088808888888888800000888888888880CCC088
+        8888888880CCC0888888888880CCC08888888888880008888888
+      }
+      OnClick = addTrianglePointsCursorModeClick
+    end
+    object removeTriangleCursorMode: TSpeedButton
+      Left = 129
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF008C0888888888
+        0C88CCC000000000CCC80C08888888880C088088888888888088880888888888
+        0888880880000088088888808888888088888880888888808888888808888808
+        8888888808888808888888888088808888888888808880888888888888000888
+        88888888880C08888888888880CCC08888888888880C08888888
+      }
+      OnClick = removeTriangleCursorModeClick
+    end
+    object flipTriangleCursorMode: TSpeedButton
+      Left = 155
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00800000000000
+        00880EEEEEE0CCCCCC080EEEEEE0CCCCCC0880EEEEE0CCCCC08880EEEEE0CCCC
+        C088880EEEE0CCCC0888880EEEE0CCCC08888880EEE0CCC088888880EEE0CCC0
+        888888880EE0CC08888888880EE0CC088888888880E0C0888888888880E0C088
+        8888888888000888888888888800088888888888888088888888
+      }
+      OnClick = flipTriangleCursorModeClick
+    end
+    object rotateCursorMode: TSpeedButton
+      Left = 31
+      Top = 3
+      Width = 25
+      Height = 25
+      GroupIndex = 1
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888880000088888888800CCCCC008888880CC88888CC088880CC8888888C
+        C0888CC888888888C088C088888888888C08C088888888888C08C08888888888
+        8888C088888888888888C0888888880000088C0888888880CC088CC088888888
+        0C0888CC08888800CC08888CC00000CC880888888CCCCC888888
+      }
+      Layout = blGlyphTop
+      OnClick = rotateCursorModeClick
+    end
+  end
+  object optionsPanel: TPanel
+    Left = 0
+    Top = 264
+    Width = 367
+    Height = 117
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object drawAsLabel: TLabel
+      Left = 65
+      Top = 39
+      Width = 58
+      Height = 14
+      Caption = '&Parts (1-30)'
+      FocusControl = plantParts
+    end
+    object Label1: TLabel
+      Left = 65
+      Top = 66
+      Width = 110
+      Height = 14
+      Caption = 'Point &size (1-30 pixels)'
+      FocusControl = circlePointSize
+    end
+    object mirrorTdo: TSpeedButton
+      Left = 9
+      Top = 5
+      Width = 63
+      Height = 25
+      Caption = 'Mirror'
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888000888
+        8888888880C0E088888888800CC0EE008888880CCCC0EEEE088880CCCCC0EEEE
+        E0888000CCC0EEE0008880CC00C0E00EE08880CCCC000EEEE08880CCCC000EEE
+        E08880CCC0C0E0EEE08880CC0CC0EE00E08880C0CCC0EEEE0088800CCCC0EEEE
+        E0888800CCC0EEE00888888800C0E00888888888880008888888
+      }
+      OnClick = mirrorTdoClick
+    end
+    object reverseZValues: TSpeedButton
+      Left = 75
+      Top = 5
+      Width = 72
+      Height = 25
+      Caption = 'Reverse'
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        888888808888888808888880C888888C08888880CC8888CC088888880CC88CC0
+        888888880CC88CC0888888880CC88CC0888888880CC88CC0888888880CC88CC0
+        888888880CC88CC0888888880CC88CC0888888880CC88CC088888880CC8888CC
+        08888880C888888C088888808888888808888888888888888888
+      }
+      OnClick = reverseZValuesClick
+    end
+    object centerDrawing: TSpeedButton
+      Left = 150
+      Top = 5
+      Width = 91
+      Height = 25
+      Caption = 'Scale to Fit'
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888800000000000000880FFFFFFFFFFFF0880FFF0FFFFFFFF0880FF000FFFFF
+        FF0880F0F0F0FF000F0880FFF0FFFFF00F0880FFF0FFFF0F0F0880FFFFFFF0FF
+        0F0880FCCCCCFFFFFF0880FCCCCCFFFFFF0880FCCCCCFFFFFF0880FCCCCCFFFF
+        FF0880FFFFFFFFFFFF0880000000000000088888888888888888
+      }
+      OnClick = centerDrawingClick
+    end
+    object resetRotations: TSpeedButton
+      Left = 244
+      Top = 5
+      Width = 115
+      Height = 25
+      Caption = 'Reset rotations'
+      Glyph.Data = {
+        F6000000424DF600000000000000760000002800000010000000100000000100
+        0400000000008000000000000000000000001000000010000000000000000000
+        8000008000000080800080000000800080008080000080808000C0C0C0000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+        8888888880000088888888800CCCCC008888880CC88888CC088880CC8888888C
+        C0888CC888000888C088C088808880888C08C088808880888C08C08880888088
+        8888C088808880888888C0888800080000088C0888888880CC088CC088888888
+        0C0888CC08888800CC08888CC00000CC880888888CCCCC888888
+      }
+      OnClick = resetRotationsClick
+    end
+    object connectionPointLabel: TLabel
+      Left = 65
+      Top = 92
+      Width = 113
+      Height = 14
+      Caption = 'Connection point (1-xx)'
+    end
+    object fillTriangles: TCheckBox
+      Left = 194
+      Top = 36
+      Width = 136
+      Height = 17
+      Caption = 'F&ill triangles with solid'
+      State = cbChecked
+      TabOrder = 2
+      OnClick = fillTrianglesClick
+    end
+    object plantParts: TSpinEdit
+      Left = 8
+      Top = 35
+      Width = 51
+      Height = 23
+      MaxValue = 30
+      MinValue = 1
+      TabOrder = 0
+      Value = 1
+      OnChange = plantPartsChange
+    end
+    object drawLines: TCheckBox
+      Left = 194
+      Top = 55
+      Width = 166
+      Height = 17
+      Caption = '&Draw lines between triangles'
+      State = cbChecked
+      TabOrder = 3
+      OnClick = drawLinesClick
+    end
+    object circlePointSize: TSpinEdit
+      Left = 8
+      Top = 62
+      Width = 51
+      Height = 23
+      MaxValue = 30
+      MinValue = 1
+      TabOrder = 1
+      Value = 1
+      OnChange = circlePointSizeChange
+    end
+    object mirrorHalf: TCheckBox
+      Left = 194
+      Top = 74
+      Width = 156
+      Height = 17
+      Caption = 'Show &mirror image'
+      TabOrder = 4
+      OnClick = mirrorHalfClick
+    end
+    object connectionPoint: TSpinEdit
+      Left = 8
+      Top = 88
+      Width = 51
+      Height = 23
+      MaxValue = 200
+      MinValue = 1
+      TabOrder = 5
+      Value = 1
+      OnChange = connectionPointChange
+    end
+  end
+  object picturesPanel: TPanel
+    Left = 0
+    Top = 29
+    Width = 367
+    Height = 235
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object verticalSplitter: TPanel
+      Left = 210
+      Top = 4
+      Width = 4
+      Height = 276
+      Cursor = crHSplit
+      BevelInner = bvLowered
+      TabOrder = 0
+      OnMouseDown = verticalSplitterMouseDown
+      OnMouseMove = verticalSplitterMouseMove
+      OnMouseUp = verticalSplitterMouseUp
+    end
+    object horizontalSplitter: TPanel
+      Left = 214
+      Top = 140
+      Width = 149
+      Height = 4
+      Cursor = crVSplit
+      BevelInner = bvLowered
+      TabOrder = 1
+      OnMouseDown = horizontalSplitterMouseDown
+      OnMouseMove = horizontalSplitterMouseMove
+      OnMouseUp = horizontalSplitterMouseUp
+    end
+  end
+  object renameTdo: TButton
+    Left = 373
+    Top = 63
+    Width = 70
+    Height = 21
+    Caption = 'Re&name'
+    TabOrder = 5
+    OnClick = renameTdoClick
+  end
+  object writeToDXF: TButton
+    Left = 373
+    Top = 196
+    Width = 70
+    Height = 21
+    Caption = 'Write D&XF...'
+    TabOrder = 8
+    OnClick = writeToDXFClick
+  end
+  object writeToPOV: TButton
+    Left = 373
+    Top = 251
+    Width = 70
+    Height = 21
+    Caption = 'Write &POV...'
+    TabOrder = 9
+    OnClick = writeToPOVClick
+  end
+  object ReadFromDXF: TButton
+    Left = 373
+    Top = 222
+    Width = 70
+    Height = 23
+    Caption = 'Read DX&F...'
+    TabOrder = 10
+    OnClick = ReadFromDXFClick
+  end
+  object clearTdo: TButton
+    Left = 373
+    Top = 159
+    Width = 70
+    Height = 21
+    Caption = 'C&lear points'
+    TabOrder = 11
+    OnClick = clearTdoClick
+  end
+end

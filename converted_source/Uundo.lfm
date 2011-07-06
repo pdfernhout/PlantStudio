@@ -1,0 +1,90 @@
+object UndoRedoListForm: TUndoRedoListForm
+  Left = 384
+  Top = 254
+  AutoScroll = False
+  Caption = 'Undo/Redo List'
+  ClientHeight = 255
+  ClientWidth = 467
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poDefaultPosOnly
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  PixelsPerInch = 96
+  TextHeight = 13
+  object helpButton: TSpeedButton
+    Left = 385
+    Top = 69
+    Width = 80
+    Height = 25
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object undoListLabel: TLabel
+    Left = 4
+    Top = 4
+    Width = 102
+    Height = 13
+    Caption = 'Things you can &Undo'
+  end
+  object redoListLabel: TLabel
+    Left = 4
+    Top = 122
+    Width = 102
+    Height = 13
+    Caption = 'Things you can &Redo'
+  end
+  object OK: TButton
+    Left = 385
+    Top = 4
+    Width = 80
+    Height = 21
+    Caption = 'Un&do/Redo'
+    TabOrder = 0
+    OnClick = OKClick
+  end
+  object cancel: TButton
+    Left = 385
+    Top = 30
+    Width = 80
+    Height = 21
+    Caption = '&Cancel'
+    TabOrder = 1
+    OnClick = cancelClick
+  end
+  object undoList: TListBox
+    Left = 4
+    Top = 20
+    Width = 375
+    Height = 97
+    ItemHeight = 13
+    MultiSelect = True
+    TabOrder = 2
+    OnClick = regulateListSelections
+  end
+  object redoList: TListBox
+    Left = 4
+    Top = 140
+    Width = 373
+    Height = 107
+    ItemHeight = 13
+    MultiSelect = True
+    TabOrder = 3
+    OnClick = regulateListSelections
+  end
+end

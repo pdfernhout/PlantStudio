@@ -1,0 +1,658 @@
+object BreedingOptionsForm: TBreedingOptionsForm
+  Left = 320
+  Top = 263
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Breeding and Time Series Options'
+  ClientHeight = 330
+  ClientWidth = 418
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  Position = poScreenCenter
+  Scaled = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 14
+  object upImage: TImage
+    Left = 452
+    Top = 116
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888888888888888888888888888888888888
+      8888808888888888808880088888888800888800888888800888888008888800
+      8888888800888008888888888008008888888888880008888888888888808888
+      8888888888888888888888888888888888888888888888888888888888888888
+      8888
+    }
+    Visible = False
+  end
+  object downImage: TImage
+    Left = 452
+    Top = 92
+    Width = 16
+    Height = 16
+    AutoSize = True
+    Picture.Data = {
+      07544269746D6170F6000000424DF60000000000000076000000280000001000
+      0000100000000100040000000000800000000000000000000000100000001000
+      0000000000000000800000800000008080008000000080008000808000008080
+      8000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFF
+      FF00888888888888888888888888888888888888888888888888888888888888
+      8888888888808888888888888800088888888888800800888888888800888008
+      8888888008888800888888008888888008888008888888880088808888888888
+      8088888888888888888888888888888888888888888888888888888888888888
+      8888
+    }
+    Visible = False
+  end
+  object helpButton: TSpeedButton
+    Left = 356
+    Top = 63
+    Width = 60
+    Height = 25
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object ok: TButton
+    Left = 356
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = 'OK'
+    Default = True
+    TabOrder = 1
+    OnClick = okClick
+  end
+  object cancel: TButton
+    Left = 356
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = 'Cancel'
+    TabOrder = 2
+    OnClick = cancelClick
+  end
+  object breedingOptions: TTabbedNotebook
+    Left = 0
+    Top = 0
+    Width = 351
+    Height = 330
+    Align = alLeft
+    TabFont.Charset = DEFAULT_CHARSET
+    TabFont.Color = clBlack
+    TabFont.Height = -11
+    TabFont.Name = 'Arial'
+    TabFont.Style = []
+    TabOrder = 0
+    object page1: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'General'
+      object GroupBox1: TGroupBox
+        Left = 4
+        Top = 4
+        Width = 334
+        Height = 71
+        Caption = ' Breeder and time series window '
+        TabOrder = 0
+        object Label4: TLabel
+          Left = 10
+          Top = 19
+          Width = 114
+          Height = 14
+          Caption = 'Size of plant thumbnails'
+        end
+        object Label1: TLabel
+          Left = 89
+          Top = 43
+          Width = 72
+          Height = 14
+          Caption = '&width (30-200)'
+          FocusControl = thumbnailWidth
+        end
+        object Label2: TLabel
+          Left = 231
+          Top = 43
+          Width = 74
+          Height = 14
+          Caption = '&height (30-200)'
+          FocusControl = thumbnailHeight
+        end
+        object thumbnailWidth: TSpinEdit
+          Left = 29
+          Top = 39
+          Width = 53
+          Height = 23
+          Increment = 5
+          MaxValue = 200
+          MinValue = 30
+          TabOrder = 0
+          Value = 30
+          OnChange = thumbnailWidthChange
+        end
+        object thumbnailHeight: TSpinEdit
+          Left = 171
+          Top = 39
+          Width = 53
+          Height = 23
+          Increment = 5
+          MaxValue = 200
+          MinValue = 30
+          TabOrder = 1
+          Value = 30
+          OnChange = thumbnailHeightChange
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 4
+        Top = 78
+        Width = 334
+        Height = 144
+        Caption = ' Breeder '
+        TabOrder = 1
+        object Label3: TLabel
+          Left = 68
+          Top = 24
+          Width = 187
+          Height = 14
+          Caption = 'Plants to &create per generation (1-100)'
+          FocusControl = plantsPerGeneration
+        end
+        object Label6: TLabel
+          Left = 68
+          Top = 53
+          Width = 190
+          Height = 14
+          Caption = '&Maximum breeder generations (20-500)'
+          FocusControl = maxGenerations
+        end
+        object Label8: TLabel
+          Left = 79
+          Top = 67
+          Width = 157
+          Height = 14
+          Caption = '(to avoid running out of memory)'
+          FocusControl = maxGenerations
+        end
+        object Label7: TLabel
+          Left = 68
+          Top = 87
+          Width = 202
+          Height = 14
+          Caption = '&Age of breeder plants (as % of maximum)'
+          FocusControl = percentMaxAge
+        end
+        object Label9: TLabel
+          Left = 68
+          Top = 117
+          Width = 245
+          Height = 14
+          Caption = 'Ma&ximum parts per breeder plant (1-100 thousand)'
+          FocusControl = maxPartsPerPlant_thousands
+        end
+        object plantsPerGeneration: TSpinEdit
+          Left = 10
+          Top = 20
+          Width = 51
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 0
+          Value = 5
+          OnChange = plantsPerGenerationChange
+        end
+        object maxGenerations: TSpinEdit
+          Left = 10
+          Top = 49
+          Width = 51
+          Height = 23
+          Increment = 10
+          MaxValue = 500
+          MinValue = 20
+          TabOrder = 1
+          Value = 50
+          OnChange = maxGenerationsChange
+        end
+        object percentMaxAge: TSpinEdit
+          Left = 10
+          Top = 83
+          Width = 51
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 2
+          Value = 100
+          OnChange = percentMaxAgeChange
+        end
+        object maxPartsPerPlant_thousands: TSpinEdit
+          Left = 10
+          Top = 113
+          Width = 51
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 3
+          Value = 1
+          OnChange = maxPartsPerPlant_thousandsChange
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 4
+        Top = 226
+        Width = 334
+        Height = 69
+        Caption = ' Time series '
+        TabOrder = 2
+        object Label5: TLabel
+          Left = 68
+          Top = 22
+          Width = 116
+          Height = 14
+          Caption = '&Stages to show (1-100)'
+          FocusControl = numTimeSeriesStages
+        end
+        object numTimeSeriesStages: TSpinEdit
+          Left = 10
+          Top = 17
+          Width = 51
+          Height = 23
+          MaxValue = 100
+          MinValue = 1
+          TabOrder = 0
+          Value = 5
+          OnChange = numTimeSeriesStagesChange
+        end
+        object updateTimeSeriesPlantsOnParameterChange: TCheckBox
+          Left = 10
+          Top = 46
+          Width = 267
+          Height = 17
+          Caption = 'Update &time series when change plant parameter'
+          TabOrder = 1
+          OnClick = updateTimeSeriesPlantsOnParameterChangeClick
+        end
+      end
+    end
+    object page2: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Mutation'
+      object mutationLabel: TLabel
+        Left = 8
+        Top = 12
+        Width = 223
+        Height = 14
+        Caption = '&Mutation strength (as percent of mean values)'
+        FocusControl = mutationSlider
+      end
+      object mutationAmountLabel: TLabel
+        Left = 8
+        Top = 32
+        Width = 22
+        Height = 14
+        Caption = '50%'
+      end
+      object mutationZero: TLabel
+        Left = 48
+        Top = 32
+        Width = 6
+        Height = 14
+        Caption = '0'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object mutationOneHundred: TLabel
+        Left = 294
+        Top = 32
+        Width = 18
+        Height = 14
+        Caption = '100'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object mutationShowSections: TSpeedButton
+        Left = 10
+        Top = 58
+        Width = 79
+        Height = 24
+        Caption = '&Sections'
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+          8888888888888888888888888888888888888888888888888888888888808888
+          8888888888000888888888888008008888888888008880088888888008888800
+          8888880088888880088880088888888800888088888888888088888888888888
+          8888888888888888888888888888888888888888888888888888
+        }
+        OnClick = mutationShowSectionsClick
+      end
+      object mutationSlider: KfWinSlider
+        Left = 60
+        Top = 32
+        Width = 233
+        Height = 13
+        OnMouseDown = mutationSliderMouseDown
+        OnMouseMove = mutationSliderMouseMove
+        OnMouseUp = mutationSliderMouseUp
+        OnKeyUp = mutationSliderKeyUp
+        CurrentValue = 0
+      end
+      object mutationSections: TListBox
+        Left = 95
+        Top = 58
+        Width = 230
+        Height = 240
+        ItemHeight = 16
+        Items.Strings = (
+          'General: 50%'
+          'Meristems: 50%'
+          'Internodes: 50%'
+          'Leaves: 50%'
+          'First leaves: 50%'
+          'Flowers (F): 50%'
+          'Flowers (M): 50%'
+          'Inflorescences (F): 50%'
+          'Inflorescences (M): 50%'
+          'Fruit: 50%'
+          'Root top: 50%'
+        )
+        MultiSelect = True
+        Style = lbOwnerDrawFixed
+        TabOrder = 1
+        OnClick = mutationSectionsClick
+        OnDrawItem = mutationSectionsDrawItem
+      end
+      object mutationSelectAll: TButton
+        Left = 10
+        Top = 94
+        Width = 80
+        Height = 24
+        Caption = 'Select &all'
+        TabOrder = 2
+        OnClick = mutationSelectAllClick
+      end
+      object mutationSelectNone: TButton
+        Left = 10
+        Top = 122
+        Width = 80
+        Height = 24
+        Caption = 'Select &none'
+        TabOrder = 3
+        OnClick = mutationSelectNoneClick
+      end
+    end
+    object page3: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Blending'
+      object weightLabel: TLabel
+        Left = 9
+        Top = 12
+        Width = 143
+        Height = 14
+        Caption = 'Relative &weight of first parent'
+        FocusControl = weightSlider
+      end
+      object weightAmountLabel: TLabel
+        Left = 11
+        Top = 32
+        Width = 22
+        Height = 14
+        Caption = '50%'
+      end
+      object weightZero: TLabel
+        Left = 46
+        Top = 32
+        Width = 6
+        Height = 14
+        Caption = '0'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object weightOneHundred: TLabel
+        Left = 290
+        Top = 32
+        Width = 18
+        Height = 14
+        Caption = '100'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object weightShowSections: TSpeedButton
+        Left = 10
+        Top = 59
+        Width = 81
+        Height = 24
+        Caption = '&Sections'
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+          8888888888888888888888888888888888888888888888888888888888808888
+          8888888888000888888888888008008888888888008880088888888008888800
+          8888880088888880088880088888888800888088888888888088888888888888
+          8888888888888888888888888888888888888888888888888888
+        }
+        OnClick = weightShowSectionsClick
+      end
+      object weightSlider: KfWinSlider
+        Left = 56
+        Top = 35
+        Width = 229
+        Height = 9
+        OnMouseDown = weightSliderMouseDown
+        OnMouseMove = weightSliderMouseMove
+        OnMouseUp = weightSliderMouseUp
+        OnKeyUp = weightSliderKeyUp
+        CurrentValue = 0
+      end
+      object weightSelectAll: TButton
+        Left = 10
+        Top = 95
+        Width = 80
+        Height = 24
+        Caption = 'Select &all'
+        TabOrder = 2
+        OnClick = weightSelectAllClick
+      end
+      object weightSelectNone: TButton
+        Left = 10
+        Top = 123
+        Width = 80
+        Height = 24
+        Caption = 'Select &none'
+        TabOrder = 3
+        OnClick = weightSelectNoneClick
+      end
+      object weightSections: TListBox
+        Left = 95
+        Top = 59
+        Width = 230
+        Height = 240
+        ItemHeight = 16
+        Items.Strings = (
+          'General: 50%'
+          'Meristems: 50%'
+          'Internodes: 50%'
+          'Leaves: 50%'
+          'First leaves: 50%'
+          'Flowers (F): 50%'
+          'Flowers (M): 50%'
+          'Inflorescences (F): 50%'
+          'Inflorescences (M): 50%'
+          'Fruit: 50%'
+          'Root top: 50%'
+        )
+        MultiSelect = True
+        Style = lbOwnerDrawFixed
+        TabOrder = 1
+        OnClick = weightSectionsClick
+        OnDrawItem = weightSectionsDrawItem
+      end
+    end
+    object page4: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Non-numeric'
+      object nonNumericLabel: TLabel
+        Left = 17
+        Top = 31
+        Width = 186
+        Height = 14
+        Caption = ' Where to get non-numeric parameters'
+      end
+      object firstPlantIfEqualLabel: TLabel
+        Left = 29
+        Top = 117
+        Width = 212
+        Height = 14
+        Caption = 'get from parent with higher weight; if 50/50,'
+      end
+      object alwaysCopyFromFirstPlant: TRadioButton
+        Left = 29
+        Top = 51
+        Width = 168
+        Height = 17
+        Caption = 'get from &first parent'
+        TabOrder = 0
+        OnClick = alwaysCopyFromFirstPlantClick
+      end
+      object alwaysCopyFromSecondPlant: TRadioButton
+        Left = 29
+        Top = 73
+        Width = 194
+        Height = 17
+        Caption = 'get from &second parent'
+        TabOrder = 1
+        OnClick = alwaysCopyFromSecondPlantClick
+      end
+      object copyRandomlyBasedOnWeights: TRadioButton
+        Tag = 1
+        Left = 29
+        Top = 95
+        Width = 258
+        Height = 17
+        Caption = 'choose randomly using &weights as probabilities'
+        TabOrder = 2
+        OnClick = copyRandomlyBasedOnWeightsClick
+      end
+      object copyBasedOnWeightsIfEqualFirstPlant: TRadioButton
+        Left = 49
+        Top = 139
+        Width = 237
+        Height = 17
+        Caption = 'get from the f&irst parent'
+        TabOrder = 3
+        OnClick = copyBasedOnWeightsIfEqualFirstPlantClick
+      end
+      object copyBasedOnWeightsIfEqualSecondPlant: TRadioButton
+        Left = 49
+        Top = 161
+        Width = 237
+        Height = 17
+        Caption = 'get from the s&econd parent'
+        TabOrder = 4
+        OnClick = copyBasedOnWeightsIfEqualSecondPlantClick
+      end
+      object copyBasedOnWeightsIfEqualChooseRandomly: TRadioButton
+        Left = 49
+        Top = 183
+        Width = 237
+        Height = 17
+        Caption = 'choose &randomly'
+        TabOrder = 5
+        OnClick = copyBasedOnWeightsIfEqualChooseRandomlyClick
+      end
+    end
+    object page5: TTabPage
+      Left = 4
+      Top = 25
+      Caption = 'Colors and 3D objects'
+      object changeTdoLibrary: TSpeedButton
+        Left = 257
+        Top = 80
+        Width = 84
+        Height = 24
+        Caption = '&Change...'
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00808888888888
+          88888088888888888888808800000800800880000BBB0888888880880BB00888
+          888880888008888888888088888888888888808800000800800880000BBB0888
+          888880880BB00888888880888008888888888088888888888888000008008000
+          88880BBB0888888888880BB00888888888888008888888888888
+        }
+        OnClick = changeTdoLibraryClick
+      end
+      object treatColorsAsNumbers: TCheckBox
+        Left = 15
+        Top = 31
+        Width = 218
+        Height = 17
+        Caption = 'mutate and blend &colors as numbers'
+        TabOrder = 0
+        OnClick = treatColorsAsNumbersClick
+      end
+      object chooseTdosRandomly: TCheckBox
+        Left = 15
+        Top = 61
+        Width = 258
+        Height = 17
+        Caption = 'choose 3D &objects randomly from current library'
+        TabOrder = 1
+        OnClick = chooseTdosRandomlyClick
+      end
+      object currentTdoLibraryFileName: TEdit
+        Left = 34
+        Top = 83
+        Width = 217
+        Height = 22
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 2
+        Text = 'currentTdoLibraryFileName'
+      end
+    end
+  end
+end

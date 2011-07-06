@@ -1,0 +1,12 @@
+[Three-dimensional object]
+Name=Trial fruit part 1
+Point=144 187 195
+Point=126 156 171
+Point=159 156 170
+Point=126 119 169
+Point=164 119 170
+Point=143 91 193
+Triangle=1 2 3
+Triangle=2 4 3
+Triangle=3 4 5
+Triangle=5 4 6

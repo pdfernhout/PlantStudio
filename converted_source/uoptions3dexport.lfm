@@ -1,0 +1,557 @@
+object Generic3DOptionsForm: TGeneric3DOptionsForm
+  Left = 245
+  Top = 119
+  BorderStyle = bsDialog
+  Caption = '3D Export Options'
+  ClientHeight = 529
+  ClientWidth = 576
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  Scaled = False
+  OnActivate = FormActivate
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 14
+  object helpButton: TSpeedButton
+    Left = 290
+    Top = 64
+    Width = 60
+    Height = 21
+    Caption = '&Help'
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00888888888888
+      888888888888888888888888880C08888888888888CCC88888888888880C0888
+      888888888888888888888888888C888888888888888C088888888888888CC888
+      888888888888CC888888888800880CC888888888CC880CC888888888CC080CC8
+      888888888CCCCC888888888888CCC88888888888888888888888
+    }
+    OnClick = helpButtonClick
+  end
+  object otherGroupBox: TGroupBox
+    Left = 4
+    Top = 232
+    Width = 280
+    Height = 175
+    Caption = ' Other options '
+    TabOrder = 1
+    object translatePlantsToWindowPositions: TCheckBox
+      Left = 10
+      Top = 151
+      Width = 245
+      Height = 17
+      Caption = '&Translate plants to match window positions'
+      TabOrder = 0
+    end
+    object writeColors: TCheckBox
+      Left = 10
+      Top = 115
+      Width = 101
+      Height = 17
+      Caption = 'Write &colors'
+      TabOrder = 1
+    end
+    object plantNameAndCylinderSidesPanel: TPanel
+      Left = 6
+      Top = 16
+      Width = 261
+      Height = 56
+      BevelOuter = bvNone
+      TabOrder = 2
+      object Label2: TLabel
+        Left = 5
+        Top = 7
+        Width = 88
+        Height = 14
+        Caption = 'Limit plant &name to'
+        FocusControl = stemCylinderFaces
+      end
+      object Label3: TLabel
+        Left = 151
+        Top = 7
+        Width = 86
+        Height = 14
+        Caption = 'characters (1-60)'
+      end
+      object stemCylinderFacesLabel: TLabel
+        Left = 5
+        Top = 35
+        Width = 145
+        Height = 14
+        Caption = 'Draw stems as c&ylinders with'
+        FocusControl = stemCylinderFaces
+      end
+      object sidesLabel: TLabel
+        Left = 200
+        Top = 35
+        Width = 59
+        Height = 14
+        Caption = 'sides (3-20)'
+      end
+      object lengthOfShortName: TSpinEdit
+        Left = 99
+        Top = 3
+        Width = 45
+        Height = 23
+        MaxValue = 60
+        MinValue = 1
+        TabOrder = 0
+        Value = 3
+      end
+      object stemCylinderFaces: TSpinEdit
+        Left = 153
+        Top = 30
+        Width = 45
+        Height = 23
+        MaxValue = 20
+        MinValue = 3
+        TabOrder = 1
+        Value = 3
+        OnChange = stemCylinderFacesChange
+      end
+    end
+    object writePlantNumberInFrontOfName: TCheckBox
+      Left = 10
+      Top = 96
+      Width = 219
+      Height = 17
+      Caption = 'Write plant n&umber in front of name'
+      TabOrder = 3
+    end
+    object pressPlantsPanel: TPanel
+      Left = 2
+      Top = 69
+      Width = 273
+      Height = 28
+      BevelOuter = bvNone
+      TabOrder = 4
+      object Label8: TLabel
+        Left = 154
+        Top = 11
+        Width = 48
+        Height = 14
+        Caption = 'dimension'
+      end
+      object pressPlants: TCheckBox
+        Left = 8
+        Top = 8
+        Width = 99
+        Height = 17
+        Caption = '"Pr&ess" plants in'
+        TabOrder = 0
+      end
+      object directionToPressPlants: TComboBox
+        Left = 108
+        Top = 3
+        Width = 41
+        Height = 22
+        Style = csDropDownList
+        ItemHeight = 14
+        Items.Strings = (
+          'x'
+          'y'
+          'z'
+        )
+        TabOrder = 1
+      end
+    end
+    object makeTrianglesDoubleSided: TCheckBox
+      Left = 10
+      Top = 133
+      Width = 181
+      Height = 17
+      Caption = '&Double polygons on 3D objects'
+      TabOrder = 5
+    end
+  end
+  object dxfColorsGroupBox: TGroupBox
+    Left = 290
+    Top = 91
+    Width = 280
+    Height = 152
+    Caption = ' Colors '
+    TabOrder = 2
+    Visible = False
+    object colorDXFFromRGB: TRadioButton
+      Left = 9
+      Top = 35
+      Width = 232
+      Height = 17
+      Caption = 'use front-face &RGB colors'
+      TabOrder = 0
+    end
+    object colorDXFFromOneColor: TRadioButton
+      Left = 9
+      Top = 56
+      Width = 244
+      Height = 15
+      Caption = 'use this o&ne color         for all plant parts'
+      TabOrder = 1
+    end
+    object wholePlantColor: TPanel
+      Left = 119
+      Top = 56
+      Width = 16
+      Height = 14
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      TabOrder = 2
+      OnMouseUp = wholePlantColorMouseUp
+    end
+    object colorDXFFromPlantPartType: TRadioButton
+      Left = 9
+      Top = 77
+      Width = 182
+      Height = 15
+      Caption = 'use colors &based on type of part'
+      TabOrder = 3
+    end
+    object colorsByPlantPart: TListBox
+      Left = 27
+      Top = 95
+      Width = 247
+      Height = 52
+      ItemHeight = 16
+      Items.Strings = (
+        'Meristems'
+        'Internodes'
+        'Leaves'
+        'First leaves'
+        'Flowers (F)'
+        'Flowers (M)'
+        'Inflor. (F)'
+        'Inflor. (M)'
+        'Fruit'
+        'Root top'
+      )
+      MultiSelect = True
+      Style = lbOwnerDrawFixed
+      TabOrder = 4
+      OnDblClick = colorsByPlantPartDblClick
+      OnDrawItem = colorsByPlantPartDrawItem
+    end
+    object setPlantPartColor: TButton
+      Left = 221
+      Top = 71
+      Width = 53
+      Height = 22
+      Caption = '&Set...'
+      TabOrder = 5
+      OnClick = setPlantPartColorClick
+    end
+    object dxfWriteColors: TCheckBox
+      Left = 10
+      Top = 16
+      Width = 101
+      Height = 17
+      Caption = 'Write &colors'
+      TabOrder = 6
+      OnClick = dxfWriteColorsClick
+    end
+  end
+  object povLimitsGroupBox: TGroupBox
+    Left = 290
+    Top = 449
+    Width = 280
+    Height = 74
+    Caption = ' Limit small lines and 3D objects '
+    TabOrder = 3
+    Visible = False
+    object Label4: TLabel
+      Left = 72
+      Top = 23
+      Width = 158
+      Height = 14
+      Caption = '&Keep lines at least this long (mm)'
+      FocusControl = minLineLengthToWrite
+    end
+    object Label5: TLabel
+      Left = 72
+      Top = 49
+      Width = 179
+      Height = 14
+      Caption = 'Keep &3D objects of at least this scale'
+      FocusControl = minTdoScaleToWrite
+    end
+    object minLineLengthToWrite: TEdit
+      Left = 17
+      Top = 19
+      Width = 51
+      Height = 22
+      TabOrder = 0
+    end
+    object minTdoScaleToWrite: TEdit
+      Left = 17
+      Top = 45
+      Width = 51
+      Height = 22
+      TabOrder = 1
+    end
+  end
+  object nestingGroupBox: TGroupBox
+    Left = 290
+    Top = 246
+    Width = 280
+    Height = 100
+    Caption = ' Nest '
+    TabOrder = 4
+    Visible = False
+    object nestLeafAndPetiole: TCheckBox
+      Left = 17
+      Top = 18
+      Width = 122
+      Height = 17
+      Caption = 'leaves with &petioles'
+      TabOrder = 0
+    end
+    object nestCompoundLeaf: TCheckBox
+      Left = 17
+      Top = 37
+      Width = 119
+      Height = 17
+      Caption = '&compound leaves'
+      TabOrder = 1
+    end
+    object nestInflorescence: TCheckBox
+      Left = 17
+      Top = 55
+      Width = 97
+      Height = 17
+      Caption = '&inflorescences'
+      TabOrder = 2
+    end
+    object nestPedicelAndFlowerFruit: TCheckBox
+      Left = 142
+      Top = 18
+      Width = 130
+      Height = 17
+      Caption = '&flowers with pedicels'
+      TabOrder = 3
+    end
+    object nestFloralLayers: TCheckBox
+      Left = 142
+      Top = 36
+      Width = 118
+      Height = 17
+      Caption = 'pistils and sta&mens'
+      TabOrder = 4
+    end
+    object commentOutUnionAtEnd: TCheckBox
+      Left = 17
+      Top = 77
+      Width = 207
+      Height = 18
+      Caption = 'Comment out &union of plants at end'
+      TabOrder = 5
+    end
+  end
+  object layeringOption: TRadioGroup
+    Left = 4
+    Top = 81
+    Width = 280
+    Height = 75
+    Caption = ' Group by '
+    Ctl3D = True
+    ItemIndex = 0
+    Items.Strings = (
+      '&whole plant'
+      '&type of plant part'
+      'individual plant &part'
+    )
+    ParentCtl3D = False
+    TabOrder = 5
+  end
+  object Close: TButton
+    Left = 290
+    Top = 4
+    Width = 60
+    Height = 21
+    Caption = '&Save'
+    TabOrder = 6
+    OnClick = CloseClick
+  end
+  object cancel: TButton
+    Left = 290
+    Top = 27
+    Width = 60
+    Height = 21
+    Cancel = True
+    Caption = '&Cancel'
+    TabOrder = 7
+    OnClick = cancelClick
+  end
+  object threeDSWarningPanel: TPanel
+    Left = 290
+    Top = 394
+    Width = 280
+    Height = 52
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 8
+    Visible = False
+    object Label6: TLabel
+      Left = 7
+      Top = 4
+      Width = 265
+      Height = 42
+      Caption = 'Note: This version of the 3DS export function does not import equally well to all 3D programs. See the help system for tips on improving 3DS compatibility.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object reorientGroupBox: TGroupBox
+    Left = 4
+    Top = 158
+    Width = 281
+    Height = 70
+    Caption = ' Reorient '
+    TabOrder = 9
+    object Label10: TLabel
+      Left = 124
+      Top = 19
+      Width = 106
+      Height = 14
+      Caption = 'degrees (-180 to 180)'
+    end
+    object Label1: TLabel
+      Left = 10
+      Top = 19
+      Width = 46
+      Height = 14
+      Caption = 'Rotate by'
+    end
+    object Label9: TLabel
+      Left = 124
+      Top = 45
+      Width = 91
+      Height = 14
+      Caption = 'percent (1-10,000)'
+    end
+    object Label7: TLabel
+      Left = 10
+      Top = 45
+      Width = 42
+      Height = 14
+      Caption = 'Scale by'
+    end
+    object xRotationBeforeDraw: TSpinEdit
+      Left = 62
+      Top = 15
+      Width = 57
+      Height = 23
+      Increment = 5
+      MaxValue = 180
+      MinValue = -180
+      TabOrder = 0
+      Value = 0
+    end
+    object overallScalingFactor_pct: TSpinEdit
+      Left = 62
+      Top = 41
+      Width = 57
+      Height = 23
+      Increment = 5
+      MaxValue = 10000
+      MinValue = 1
+      TabOrder = 1
+      Value = 10000
+    end
+  end
+  object drawWhichPlantsGroupBox: TGroupBox
+    Left = 4
+    Top = 4
+    Width = 280
+    Height = 76
+    Caption = ' Include '
+    TabOrder = 0
+    object useSelectedPlants: TRadioButton
+      Left = 8
+      Top = 16
+      Width = 96
+      Height = 17
+      Caption = 'se&lected plants'
+      TabOrder = 0
+      OnClick = useSelectedPlantsClick
+    end
+    object useVisiblePlants: TRadioButton
+      Left = 107
+      Top = 16
+      Width = 82
+      Height = 17
+      Caption = '&visible plants'
+      TabOrder = 1
+      OnClick = useVisiblePlantsClick
+    end
+    object useAllPlants: TRadioButton
+      Left = 206
+      Top = 16
+      Width = 65
+      Height = 17
+      Caption = '&all plants'
+      TabOrder = 2
+      OnClick = useAllPlantsClick
+    end
+    object estimationStringGrid: TStringGrid
+      Left = 5
+      Top = 35
+      Width = 270
+      Height = 35
+      Color = clBtnFace
+      ColCount = 6
+      Ctl3D = False
+      DefaultColWidth = 42
+      DefaultRowHeight = 16
+      FixedColor = clBtnHighlight
+      FixedCols = 0
+      RowCount = 3
+      FixedRows = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Style = []
+      Options = [goFixedVertLine, goFixedHorzLine, goDrawFocusSelected]
+      ParentCtl3D = False
+      ParentFont = False
+      ScrollBars = ssNone
+      TabOrder = 3
+      ColWidths = (
+        42
+        42
+        42
+        42
+        42
+        42
+      )
+    end
+  end
+  object vrmlVersionRadioGroup: TRadioGroup
+    Left = 290
+    Top = 351
+    Width = 280
+    Height = 38
+    Caption = ' Version '
+    Columns = 2
+    Ctl3D = True
+    ItemIndex = 1
+    Items.Strings = (
+      'VRML &1.0'
+      'VRML &2.0 (VRML 97)'
+    )
+    ParentCtl3D = False
+    TabOrder = 10
+    Visible = False
+  end
+end
